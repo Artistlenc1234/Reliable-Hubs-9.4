@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Storage Solutions</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link href="navbar.css" rel="stylesheet">
+    <link href="solutions.css" rel="stylesheet">
+    <link href="footer.css" rel="stylesheet">
+    <style>
+        .office-storage-hero {
+            --office-storage-box-width: 60px;
+            --office-storage-box-height: 55px;
+            --office-storage-panel-width: min(64.5%, 700px);
+            --office-storage-left-cluster-left: 0px;
+            position: relative;
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+            height: clamp(320px, 35vw, 405px);
+            min-height: 320px;
+            padding: 0;
+            background: #ffffff;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .office-storage-hero__image {
+            position: absolute;
+            inset: 0;
+            background-image: url('uploads/office-storage.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .office-storage-hero__panel {
+            position: relative;
+            z-index: 1;
+            width: var(--office-storage-panel-width);
+            min-width: 535px;
+            background: #f3f3f3;
+            clip-path: polygon(0 0, 79% 0, 100% 100%, 0 100%);
+            display: flex;
+            align-items: center;
+            padding: 28px 116px 28px 112px;
+        }
+
+        .office-storage-hero__content {
+            position: relative;
+            z-index: 2;
+            transform: translate(48px, 24px);
+        }
+
+        .office-storage-hero__content h1 {
+            margin: 0;
+            color: #0c1118;
+            font-size: 55px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 720;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+        }
+
+        .office-storage-hero__box {
+            position: absolute;
+            z-index: 2;
+            width: var(--office-storage-box-width);
+            height: var(--office-storage-box-height);
+            display: block;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .office-storage-hero__box--top-a {
+            top: 0;
+            left: var(--office-storage-left-cluster-left);
+        }
+
+        .office-storage-hero__box--top-b {
+            top: 0;
+            left: calc(var(--office-storage-left-cluster-left) + var(--office-storage-box-width));
+        }
+
+        .office-storage-hero__box--top-c {
+            top: var(--office-storage-box-height);
+            left: var(--office-storage-left-cluster-left);
+        }
+
+        .office-storage-hero__box--top-d {
+            top: calc(var(--office-storage-box-height) * 2);
+            left: calc(var(--office-storage-left-cluster-left) + var(--office-storage-box-width));
+        }
+
+        .office-storage-hero__box--bottom-a {
+            bottom: 0;
+            left: calc(var(--office-storage-panel-width) - 196px);
+        }
+
+        .office-storage-hero__box--bottom-b {
+            bottom: var(--office-storage-box-height);
+            left: calc(var(--office-storage-panel-width) - 132px);
+        }
+
+        .office-storage-hero__box--bottom-c {
+            bottom: 0;
+            left: calc(var(--office-storage-panel-width) - 68px);
+        }
+
+        .office-storage-hero__box--bottom-d {
+            bottom: 0;
+            left: calc(var(--office-storage-panel-width) - 68px + var(--office-storage-box-width));
+        }
+
+        .office-storage-hero__box--image-top-a {
+            top: 0;
+            right: 132px;
+        }
+
+        .office-storage-hero__box--image-top-b {
+            top: var(--office-storage-box-height);
+            right: 68px;
+        }
+
+        @media (max-width: 768px) {
+            .office-storage-hero {
+                --office-storage-panel-width: 87%;
+                min-height: 345px;
+                height: auto;
+            }
+
+            .office-storage-hero__panel {
+                min-width: 0;
+                padding: 68px 58px 34px 64px;
+                clip-path: polygon(0 0, 84% 0, 100% 100%, 0 100%);
+            }
+
+            .office-storage-hero__content h1 {
+                font-size: clamp(1.8rem, 8vw, 2.5rem);
+            }
+
+            .office-storage-hero__box--bottom-a {
+                left: calc(var(--office-storage-panel-width) - 184px);
+            }
+
+            .office-storage-hero__box--bottom-b {
+                left: calc(var(--office-storage-panel-width) - 120px);
+            }
+
+            .office-storage-hero__box--bottom-c {
+                left: calc(var(--office-storage-panel-width) - 56px);
+            }
+
+            .office-storage-hero__box--bottom-d {
+                left: calc(var(--office-storage-panel-width) - 104px + var(--office-storage-box-width));
+            }
+
+            .office-storage-hero__box--image-top-a {
+                right: 104px;
+            }
+
+            .office-storage-hero__box--image-top-b {
+                right: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .office-storage-hero {
+                --office-storage-panel-width: 89%;
+                min-height: 305px;
+            }
+
+            .office-storage-hero__panel {
+                padding: 60px 44px 26px 40px;
+            }
+
+            .office-storage-hero__box--top-b {
+                left: calc(var(--office-storage-left-cluster-left) + var(--office-storage-box-width));
+            }
+
+            .office-storage-hero__box--top-c {
+                top: var(--office-storage-box-height);
+            }
+
+            .office-storage-hero__box--top-d {
+                top: calc(var(--office-storage-box-height) * 2);
+            }
+
+            .office-storage-hero__box--bottom-a {
+                left: calc(var(--office-storage-panel-width) - 172px);
+            }
+
+            .office-storage-hero__box--bottom-b {
+                left: calc(var(--office-storage-panel-width) - 108px);
+            }
+
+            .office-storage-hero__box--bottom-c {
+                left: calc(var(--office-storage-panel-width) - 44px);
+            }
+
+            .office-storage-hero__box--bottom-d {
+                left: calc(var(--office-storage-panel-width) - 92px + var(--office-storage-box-width));
+            }
+
+            .office-storage-hero__box--image-top-a {
+                right: 74px;
+            }
+
+            .office-storage-hero__box--image-top-b {
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-root"></div>
+
+    <main class="solutions-page">
+        <section class="solutions-hero office-storage-hero" aria-label="Office storage solutions banner">
+            <div class="office-storage-hero__image" role="img" aria-label="Office storage cabinets and organization systems"></div>
+            <div class="office-storage-hero__panel">
+                <div class="office-storage-hero__content">
+                    <h1>Office Storage<br>Solutions</h1>
+                </div>
+            </div>
+            <img class="office-storage-hero__box office-storage-hero__box--top-a" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="office-storage-hero__box office-storage-hero__box--top-b" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="office-storage-hero__box office-storage-hero__box--top-c" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="office-storage-hero__box office-storage-hero__box--top-d" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="office-storage-hero__box office-storage-hero__box--bottom-a" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="office-storage-hero__box office-storage-hero__box--bottom-b" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="office-storage-hero__box office-storage-hero__box--bottom-c" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="office-storage-hero__box office-storage-hero__box--bottom-d" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="office-storage-hero__box office-storage-hero__box--image-top-a" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="office-storage-hero__box office-storage-hero__box--image-top-b" src="uploads/box-1.png" alt="" aria-hidden="true">
+        </section>
+
+        <section class="solutions-grid" aria-label="Office storage options">
+            <article class="solution-card" id="locker-cabinats">
+                <img src="uploads/Office-Storage-Solutions-c/Locker Cabinets.png" alt="Locker Cabinets" loading="lazy">
+                <div class="card-body">
+                    <h3>Locker Cabinets</h3>
+                    <a class="solution-btn" href="locker-cabinats.html" aria-label="View more about Locker Cabinets">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="mobile-compactor">
+                <img src="uploads/Office-Storage-Solutions-c/Mobile-Compactor-1.jpg" alt="Mobile Compactor" loading="lazy">
+                <div class="card-body">
+                    <h3>Mobile Compactor</h3>
+                    <a class="solution-btn" href="mobile-compactor.html" aria-label="View more about Mobile Compactor">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="filling-cabinets">
+                <img src="uploads/Office-Storage-Solutions-c/Filing Cabinets.jpg" alt="Filling Cabinets" loading="lazy">
+                <div class="card-body">
+                    <h3>Filling Cabinets</h3>
+                    <a class="solution-btn" href="filling-cabinets.html" aria-label="View more about Filling Cabinets">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="office-aimirah">
+                <img src="uploads/Office-Storage-Solutions-c/Office Almirah.jpg" alt="Office Almirah" loading="lazy">
+                <div class="card-body">
+                    <h3>Office Almirah</h3>
+                    <a class="solution-btn" href="office-aimirah.html" aria-label="View more about Office Almirah">&rarr;</a>
+                </div>
+            </article>
+        </section>
+
+    </main>
+    <div id="footer-root"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="main.js" defer></script>
+</body>
+</html>

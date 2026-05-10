@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Compactor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+  <link href="navbar.css" rel="stylesheet">
+  <link href="footer.css" rel="stylesheet">
+  <link href="selective-pallet.css" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar-root"></div>
+  <main class="selective-page">
+    <section class="product-detail" data-aos="fade-up">
+      <div class="product-gallery">
+        <div class="thumb-column">
+          <button type="button" class="thumb-btn active-thumb" data-src="uploads/Mobile Compactor/Mobile-Compactor-1.jpg" aria-current="true"><img src="uploads/Mobile Compactor/Mobile-Compactor-1.jpg" alt="Mobile compactor front view"></button>
+          
+        </div>
+        <div class="main-photo">
+          <img id="mainProductImage" src="uploads/Mobile Compactor/Mobile-Compactor-1.jpg" alt="Mobile Compactor">
+        </div>
+      </div>
+      <div class="product-summary">
+        <h1>Mobile Compactor</h1>
+        <p>A mobile compactor, or mobile shelving system, is an advanced storage solution that maximizes floor space by moving storage units along tracks. It enables compact high-density storage with adjustable aisle access, making it ideal for offices, archives, libraries, and warehouses.</p>
+        <dl class="specs-grid">
+          <div><dt>Space Optimization</dt><dd>Eliminates fixed aisles and opens access to one aisle at a time</dd></div>
+          <div><dt>Flexibility</dt><dd>Configurable shelves, dividers, and accessories</dd></div>
+          <div><dt>Security</dt><dd>Locking systems for confidential or valuable stored items</dd></div>
+        </dl>
+        <h4>Features</h4>
+        <ul class="features">
+          <li>Increases storage capacity by up to 50% over conventional fixed shelving</li>
+          <li>Smooth sliding or motorized movement supports user-friendly operation</li>
+          <li>Ergonomic handling and easy shelf access improve daily usability</li>
+          <li>Modular construction enables future expansion and reconfiguration</li>
+          <li>Improves organization and retrieval speed for stored materials</li>
+          <li>Reduces need for additional storage rooms and floor expansion</li>
+          <li>Secure locking options protect sensitive records and valuables</li>
+          <li>Adaptable for documents, archives, inventory, and specialized storage</li>
+          <li>Supports structured high-density storage in constrained spaces</li>
+          <li>Cost-efficient storage strategy for long-term facility optimization</li>
+        </ul>
+      </div>
+    </section>
+    <section class="info-list">
+      <div class="info-card" data-aos="zoom-in">Ideal for archives, record rooms, hospitals, legal offices, libraries, and museums.</div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="100">Effective for warehouse parts storage, retail stockrooms, and inventory management.</div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="200">Suitable for pharmaceutical and lab environments requiring secure compact storage.</div>
+    </section>
+    <section class="video-info-section" data-aos="fade-up">
+      <div class="video-copy">
+        <span class="section-tag">Product Walkthrough</span>
+        <h2>Mobile compactors built for high-density storage, secure access, and efficient space utilization</h2>
+        <div class="video-copy-text">
+        <p>Mobile compactor systems help organizations maximize usable floor area by compacting shelving units and opening aisles only when required. This increases storage density while maintaining controlled access to documents, files, inventory, and other stored materials.</p>
+        <p>With flexible configuration, secure locking options, and scalable modular design, mobile compactors improve retrieval workflows, reduce infrastructure costs, and deliver reliable long-term storage performance across administrative and industrial environments.</p>
+      </div>
+      </div>
+      <!-- <div class="video-frame">
+        <video controls preload="metadata" poster="uploads/video-banner.png">
+          <source src="uploads/selective-pallet-racking-demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div> -->
+    </section>
+    <section class="quote-board" data-aos="fade-up">
+      <form class="quote-form">
+        <h2>Enquiry Now</h2>
+        <div class="form-grid">
+          <label for="quote-name"><span>Name <span class="required">*</span></span><input id="quote-name" name="name" type="text" required></label>
+          <label for="quote-company"><span>Company Name <span class="required">*</span></span><input id="quote-company" name="company" type="text" required></label>
+          <label for="quote-email"><span>Email <span class="required">*</span></span><input id="quote-email" name="email" type="email" required></label>
+          <label for="quote-mobile"><span>Mobile No <span class="required">*</span></span><input id="quote-mobile" name="mobile" type="number" required></label>
+          <label for="quote-city"><span>City <span class="required">*</span></span><input id="quote-city" name="city" type="text" required></label>
+          <label for="quote-product"><span>Product <span class="required">*</span></span><select id="quote-product" name="product" required><option value="" disabled>Select Product</option><option value="locker-cabinats">Locker Cabinets</option><option value="mobile-compactor" selected>Mobile Compactor</option><option value="filling-cabinets">Filling Cabinets</option><option value="office-aimirah">Office Almirah</option></select></label>
+          <label for="quote-source" class="full"><span>Source <span class="required">*</span></span><select id="quote-source" name="source" required><option value="" disabled selected>Select Source</option><option value="google">Google Search</option><option value="social-media">Social Media</option><option value="referral">Referral</option></select></label>
+          <label for="quote-brief" class="full"><span>Message</span><textarea id="quote-brief" name="brief" rows="6"></textarea></label>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </section>
+  </main>
+  <div id="footer-root"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImage = document.getElementById('mainProductImage');
+      const thumbButtons = document.querySelectorAll('.thumb-column .thumb-btn');
+      thumbButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const src = btn.dataset.src;
+          if (src && mainImage) {
+            mainImage.src = src;
+            thumbButtons.forEach(t => {
+              t.classList.remove('active-thumb');
+              t.removeAttribute('aria-current');
+            });
+            btn.classList.add('active-thumb');
+            btn.setAttribute('aria-current', 'true');
+          }
+        });
+      });
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

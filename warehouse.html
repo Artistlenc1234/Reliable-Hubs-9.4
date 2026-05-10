@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Storage Solutions</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link href="navbar.css" rel="stylesheet">
+    <link href="solutions.css" rel="stylesheet">
+    <link href="footer.css" rel="stylesheet">
+    <style>
+        .warehouse-hero {
+            --warehouse-box-width: 60px;
+            --warehouse-box-height: 55px;
+            --warehouse-panel-width: min(64.5%, 700px);
+            --warehouse-left-cluster-left: 0px;
+            position: relative;
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+            height: clamp(320px, 35vw, 405px);
+            min-height: 320px;
+            padding: 0;
+            background: #ffffff;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .warehouse-hero__image {
+            position: absolute;
+            inset: 0;
+            background-image: url('uploads/warehouse-banner.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .warehouse-hero__panel {
+            position: relative;
+            z-index: 1;
+            width: var(--warehouse-panel-width);
+            min-width: 535px;
+            background: #f3f3f3;
+            clip-path: polygon(0 0, 79% 0, 100% 100%, 0 100%);
+            display: flex;
+            align-items: center;
+            padding: 28px 116px 28px 112px;
+        }
+
+        .warehouse-hero__content {
+            position: relative;
+            z-index: 2;
+            transform: translate(48px, 24px);
+        }
+
+        .warehouse-hero__content h1 {
+            margin: 0;
+            color: #0c1118;
+            font-size: 55px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 720;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+        }
+
+        .warehouse-hero__box {
+            position: absolute;
+            z-index: 2;
+            width: var(--warehouse-box-width);
+            height: var(--warehouse-box-height);
+            display: block;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .warehouse-hero__box--top-a {
+            top: 0;
+            left: var(--warehouse-left-cluster-left);
+        }
+
+        .warehouse-hero__box--top-b {
+            top: 0;
+            left: calc(var(--warehouse-left-cluster-left) + var(--warehouse-box-width));
+        }
+
+        .warehouse-hero__box--top-c {
+            top: var(--warehouse-box-height);
+            left: var(--warehouse-left-cluster-left);
+        }
+
+        .warehouse-hero__box--top-d {
+            top: calc(var(--warehouse-box-height) * 2);
+            left: calc(var(--warehouse-left-cluster-left) + var(--warehouse-box-width));
+        }
+
+        .warehouse-hero__box--bottom-a {
+            bottom: 0;
+            left: calc(var(--warehouse-panel-width) - 196px);
+        }
+
+        .warehouse-hero__box--bottom-b {
+            bottom: var(--warehouse-box-height);
+            left: calc(var(--warehouse-panel-width) - 132px);
+        }
+
+        .warehouse-hero__box--bottom-c {
+            bottom: 0;
+            left: calc(var(--warehouse-panel-width) - 68px);
+        }
+
+        .warehouse-hero__box--bottom-d {
+            bottom: 0;
+            left: calc(var(--warehouse-panel-width) - 68px + var(--warehouse-box-width));
+        }
+
+        .warehouse-hero__box--image-top-a {
+            top: 0;
+            right: 132px;
+        }
+
+        .warehouse-hero__box--image-top-b {
+            top: var(--warehouse-box-height);
+            right: 68px;
+        }
+
+        @media (max-width: 768px) {
+            .warehouse-hero {
+                --warehouse-panel-width: 87%;
+                min-height: 345px;
+                height: auto;
+            }
+
+            .warehouse-hero__panel {
+                min-width: 0;
+                padding: 68px 58px 34px 64px;
+                clip-path: polygon(0 0, 84% 0, 100% 100%, 0 100%);
+            }
+
+            .warehouse-hero__content h1 {
+                font-size: clamp(1.8rem, 8vw, 2.5rem);
+            }
+
+            .warehouse-hero__box--bottom-a {
+                left: calc(var(--warehouse-panel-width) - 184px);
+            }
+
+            .warehouse-hero__box--bottom-b {
+                left: calc(var(--warehouse-panel-width) - 120px);
+            }
+
+            .warehouse-hero__box--bottom-c {
+                left: calc(var(--warehouse-panel-width) - 56px);
+            }
+
+            .warehouse-hero__box--bottom-d {
+                left: calc(var(--warehouse-panel-width) - 104px + var(--warehouse-box-width));
+            }
+
+            .warehouse-hero__box--image-top-a {
+                right: 104px;
+            }
+
+            .warehouse-hero__box--image-top-b {
+                right: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .warehouse-hero {
+                --warehouse-panel-width: 89%;
+                min-height: 305px;
+            }
+
+            .warehouse-hero__panel {
+                padding: 60px 44px 26px 40px;
+            }
+
+            .warehouse-hero__box--top-b {
+                left: calc(var(--warehouse-left-cluster-left) + var(--warehouse-box-width));
+            }
+
+            .warehouse-hero__box--top-c {
+                top: var(--warehouse-box-height);
+            }
+
+            .warehouse-hero__box--top-d {
+                top: calc(var(--warehouse-box-height) * 2);
+            }
+
+            .warehouse-hero__box--bottom-a {
+                left: calc(var(--warehouse-panel-width) - 172px);
+            }
+
+            .warehouse-hero__box--bottom-b {
+                left: calc(var(--warehouse-panel-width) - 108px);
+            }
+
+            .warehouse-hero__box--bottom-c {
+                left: calc(var(--warehouse-panel-width) - 44px);
+            }
+
+            .warehouse-hero__box--bottom-d {
+                left: calc(var(--warehouse-panel-width) - 92px + var(--warehouse-box-width));
+            }
+
+            .warehouse-hero__box--image-top-a {
+                right: 74px;
+            }
+
+            .warehouse-hero__box--image-top-b {
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-root"></div>
+
+    <main class="solutions-page">
+        <section class="solutions-hero warehouse-hero" aria-label="Warehouse storage solutions banner">
+            <div class="warehouse-hero__image" role="img" aria-label="Warehouse storage racks and inventory"></div>
+            <div class="warehouse-hero__panel">
+                <div class="warehouse-hero__content">
+                    <h1>Warehouse<br>Storage Solutions</h1>
+                </div>
+            </div>
+            <img class="warehouse-hero__box warehouse-hero__box--top-a" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="warehouse-hero__box warehouse-hero__box--top-b" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="warehouse-hero__box warehouse-hero__box--top-c" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="warehouse-hero__box warehouse-hero__box--top-d" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="warehouse-hero__box warehouse-hero__box--bottom-a" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="warehouse-hero__box warehouse-hero__box--bottom-b" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="warehouse-hero__box warehouse-hero__box--bottom-c" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="warehouse-hero__box warehouse-hero__box--bottom-d" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="warehouse-hero__box warehouse-hero__box--image-top-a" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="warehouse-hero__box warehouse-hero__box--image-top-b" src="uploads/box-1.png" alt="" aria-hidden="true">
+        </section>
+
+        <section class="solutions-grid" aria-label="Warehouse Storage sub solutions">
+            <article class="solution-card" id="racking-solutions">
+                <img src="uploads/Warehouse Storage Solutions/Racking Solutions.jpg" alt="Racking Solutions" loading="lazy">
+                <div class="card-body">
+                    <h3>Racking Solutions</h3>
+                    <a class="solution-btn" href="racking-solutions.html" aria-label="View more about Racking Solutions">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="shelving-solutions">
+                <img src="uploads/Warehouse Storage Solutions/Shelving Solutions.jpg" alt="Shelving Solutions" loading="lazy">
+                <div class="card-body">
+                    <h3>Shelving Solutions</h3>
+                    <a class="solution-btn" href="shelving-solutions.html" aria-label="View more about Shelving Solutions">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="automated-solutions">
+                <img src="uploads/Warehouse Storage Solutions/Automated Solutions.jpg" alt="Automated Solutions" loading="lazy">
+                <div class="card-body">
+                    <h3>Automated Solutions</h3>
+                    <a class="solution-btn" href="automated-solutions.html" aria-label="View more about Automated Solutions">&rarr;</a>
+                </div>
+            </article>
+        </section>
+
+    </main>
+    <div id="footer-root"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="main.js" defer></script>
+</body>
+</html>

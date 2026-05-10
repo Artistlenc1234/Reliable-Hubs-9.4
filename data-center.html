@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Center Racks</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link href="navbar.css" rel="stylesheet">
+    <link href="solutions.css" rel="stylesheet">
+    <link href="footer.css" rel="stylesheet">
+    <style>
+        .data-center-hero {
+            --data-center-box-width: 60px;
+            --data-center-box-height: 55px;
+            --data-center-panel-width: min(64.5%, 700px);
+            --data-center-left-cluster-left: 0px;
+            position: relative;
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+            height: clamp(320px, 35vw, 405px);
+            min-height: 320px;
+            padding: 0;
+            background: #ffffff;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .data-center-hero__image {
+            position: absolute;
+            inset: 0;
+            background-image: url('uploads/data-center.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .data-center-hero__panel {
+            position: relative;
+            z-index: 1;
+            width: var(--data-center-panel-width);
+            min-width: 535px;
+            background: #f3f3f3;
+            clip-path: polygon(0 0, 79% 0, 100% 100%, 0 100%);
+            display: flex;
+            align-items: center;
+            padding: 28px 116px 28px 112px;
+        }
+
+        .data-center-hero__content {
+            position: relative;
+            z-index: 2;
+            transform: translate(48px, 24px);
+        }
+
+        .data-center-hero__content h1 {
+            margin: 0;
+            color: #0c1118;
+            font-size: 55px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 720;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+        }
+
+        .data-center-hero__box {
+            position: absolute;
+            z-index: 2;
+            width: var(--data-center-box-width);
+            height: var(--data-center-box-height);
+            display: block;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .data-center-hero__box--top-a {
+            top: 0;
+            left: var(--data-center-left-cluster-left);
+        }
+
+        .data-center-hero__box--top-b {
+            top: 0;
+            left: calc(var(--data-center-left-cluster-left) + var(--data-center-box-width));
+        }
+
+        .data-center-hero__box--top-c {
+            top: var(--data-center-box-height);
+            left: var(--data-center-left-cluster-left);
+        }
+
+        .data-center-hero__box--top-d {
+            top: calc(var(--data-center-box-height) * 2);
+            left: calc(var(--data-center-left-cluster-left) + var(--data-center-box-width));
+        }
+
+        .data-center-hero__box--bottom-a {
+            bottom: 0;
+            left: calc(var(--data-center-panel-width) - 196px);
+        }
+
+        .data-center-hero__box--bottom-b {
+            bottom: var(--data-center-box-height);
+            left: calc(var(--data-center-panel-width) - 132px);
+        }
+
+        .data-center-hero__box--bottom-c {
+            bottom: 0;
+            left: calc(var(--data-center-panel-width) - 68px);
+        }
+
+        .data-center-hero__box--bottom-d {
+            bottom: 0;
+            left: calc(var(--data-center-panel-width) - 68px + var(--data-center-box-width));
+        }
+
+        .data-center-hero__box--image-top-a {
+            top: 0;
+            right: 132px;
+        }
+
+        .data-center-hero__box--image-top-b {
+            top: var(--data-center-box-height);
+            right: 68px;
+        }
+
+        @media (max-width: 768px) {
+            .data-center-hero {
+                --data-center-panel-width: 87%;
+                min-height: 345px;
+                height: auto;
+            }
+
+            .data-center-hero__panel {
+                min-width: 0;
+                padding: 68px 58px 34px 64px;
+                clip-path: polygon(0 0, 84% 0, 100% 100%, 0 100%);
+            }
+
+            .data-center-hero__content h1 {
+                font-size: clamp(1.8rem, 8vw, 2.5rem);
+            }
+
+            .data-center-hero__box--bottom-a {
+                left: calc(var(--data-center-panel-width) - 184px);
+            }
+
+            .data-center-hero__box--bottom-b {
+                left: calc(var(--data-center-panel-width) - 120px);
+            }
+
+            .data-center-hero__box--bottom-c {
+                left: calc(var(--data-center-panel-width) - 56px);
+            }
+
+            .data-center-hero__box--bottom-d {
+                left: calc(var(--data-center-panel-width) - 104px + var(--data-center-box-width));
+            }
+
+            .data-center-hero__box--image-top-a {
+                right: 104px;
+            }
+
+            .data-center-hero__box--image-top-b {
+                right: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .data-center-hero {
+                --data-center-panel-width: 89%;
+                min-height: 305px;
+            }
+
+            .data-center-hero__panel {
+                padding: 60px 44px 26px 40px;
+            }
+
+            .data-center-hero__box--top-b {
+                left: calc(var(--data-center-left-cluster-left) + var(--data-center-box-width));
+            }
+
+            .data-center-hero__box--top-c {
+                top: var(--data-center-box-height);
+            }
+
+            .data-center-hero__box--top-d {
+                top: calc(var(--data-center-box-height) * 2);
+            }
+
+            .data-center-hero__box--bottom-a {
+                left: calc(var(--data-center-panel-width) - 172px);
+            }
+
+            .data-center-hero__box--bottom-b {
+                left: calc(var(--data-center-panel-width) - 108px);
+            }
+
+            .data-center-hero__box--bottom-c {
+                left: calc(var(--data-center-panel-width) - 44px);
+            }
+
+            .data-center-hero__box--bottom-d {
+                left: calc(var(--data-center-panel-width) - 92px + var(--data-center-box-width));
+            }
+
+            .data-center-hero__box--image-top-a {
+                right: 74px;
+            }
+
+            .data-center-hero__box--image-top-b {
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-root"></div>
+
+    <main class="solutions-page">
+        <section class="solutions-hero data-center-hero" aria-label="Data center racks banner">
+            <div class="data-center-hero__image" role="img" aria-label="Data center racks and server cabinets"></div>
+            <div class="data-center-hero__panel">
+                <div class="data-center-hero__content">
+                    <h1>Data Center<br>Racks</h1>
+                </div>
+            </div>
+            <img class="data-center-hero__box data-center-hero__box--top-a" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="data-center-hero__box data-center-hero__box--top-b" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="data-center-hero__box data-center-hero__box--top-c" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="data-center-hero__box data-center-hero__box--top-d" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="data-center-hero__box data-center-hero__box--bottom-a" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="data-center-hero__box data-center-hero__box--bottom-b" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="data-center-hero__box data-center-hero__box--bottom-c" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="data-center-hero__box data-center-hero__box--bottom-d" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="data-center-hero__box data-center-hero__box--image-top-a" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="data-center-hero__box data-center-hero__box--image-top-b" src="uploads/box-1.png" alt="" aria-hidden="true">
+        </section>
+
+        <section class="solutions-grid" aria-label="Data center rack options">
+            <article class="solution-card" id="wall-mounts">
+                <img src="uploads/Data-Center-Racks-c/Wall Mounts.jpg" alt="Wall Mounts" loading="lazy">
+                <div class="card-body">
+                    <h3>Wall Mounts</h3>
+                    <a class="solution-btn" href="wall-mounts.html" aria-label="View more about Wall Mounts">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="open-racks">
+                <img src="uploads/Data-Center-Racks-c/Open Racks​.jpg" alt="Open Racks" loading="lazy">
+                <div class="card-body">
+                    <h3>Open Racks</h3>
+                    <a class="solution-btn" href="open-racks.html" aria-label="View more about Open Racks">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="outdoor-racks">
+                <img src="uploads/Data-Center-Racks-c/Outdoor Racks​.jpg" alt="Outdoor Racks" loading="lazy">
+                <div class="card-body">
+                    <h3>Outdoor Racks</h3>
+                    <a class="solution-btn" href="outdoor-racks.html" aria-label="View more about Outdoor Racks">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="floor-standing-server-networking-racks">
+                <img src="uploads/Data-Center-Racks-c/Floor Standing Server :Networking Racks.jpg" alt="Floor Standing Server/Networking Racks" loading="lazy">
+                <div class="card-body">
+                    <h3>Floor Standing Server/Networking Racks</h3>
+                    <a class="solution-btn" href="floor-standing-server-networking-racks.html" aria-label="View more about Floor Standing Server and Networking Racks">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="customized-racks-consoles">
+                <img src="uploads/Data-Center-Racks-c/Customized Racks & Consoles.jpg" alt="Customized Racks & Consoles" loading="lazy">
+                <div class="card-body">
+                    <h3>Customized Racks & Consoles</h3>
+                    <a class="solution-btn" href="customized-racks-consoles.html" aria-label="View more about Customized Racks and Consoles">&rarr;</a>
+                </div>
+            </article>
+        </section>
+
+    </main>
+    <div id="footer-root"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="main.js" defer></script>
+</body>
+</html>

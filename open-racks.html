@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Racks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+  <link href="navbar.css" rel="stylesheet">
+  <link href="footer.css" rel="stylesheet">
+  <link href="selective-pallet.css" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar-root"></div>
+  <main class="selective-page">
+    <section class="product-detail" data-aos="fade-up">
+      <div class="product-gallery">
+        <div class="thumb-column">
+          <button type="button" class="thumb-btn active-thumb" data-src="uploads/Open Racks/open rack.jpg" aria-current="true"><img src="uploads/Open Racks/open rack.jpg" alt="Open rack front view"></button>
+         
+        </div>
+        <div class="main-photo">
+          <img id="mainProductImage" src="uploads/Open Racks/open rack.jpg" alt="Open Racks">
+        </div>
+      </div>
+      <div class="product-summary">
+        <h1>Open Racks</h1>
+        <p>Open rack constructions are designed for maximum user flexibility and all-side equipment access, especially for data communication and networking applications where unrestricted access, cable routing, and service visibility are essential.</p>
+        <dl class="specs-grid">
+          <div><dt>Mounting Pattern</dt><dd>Universal 5/8"-5/8"-1/2" hole pattern for 19" and 23" equipment</dd></div>
+          <div><dt>Load Bearing</dt><dd>Distributed load capacity up to 800 lbs</dd></div>
+          <div><dt>Ranges</dt><dd>Available in 42U to 47U heights</dd></div>
+        </dl>
+        <h4>Features</h4>
+        <ul class="features">
+          <li>All-side equipment access improves installation and maintenance flexibility</li>
+          <li>Multiple racks can be bayed together using a baying kit</li>
+          <li>Top and side frame cable-entry cut-outs support effective cable routing</li>
+          <li>Available in steel and aluminum models for varied infrastructure needs</li>
+          <li>Strong 3" x 1.265" x 1/4" uprights provide stable structural support</li>
+          <li>Top angles use heavy-duty bolted aluminum extruded members for added strength</li>
+          <li>Base angle with 8 mm flange thickness improves rack stability</li>
+          <li>Design handles cantilever stress from deeper mounted equipment</li>
+          <li>Universal mounting profile supports broad compatibility with network hardware</li>
+          <li>Optimized structure helps maximize usable installation space</li>
+        </ul>
+      </div>
+    </section>
+    <section class="info-list">
+      <div class="info-card" data-aos="zoom-in">Ideal for networking and data communication setups requiring unrestricted side access.</div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="100">Supports scalable multi-rack layouts with baying and flexible cable entry.</div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="200">Strong frame structure supports reliable mounting of heavy technical equipment.</div>
+    </section>
+    <section class="video-info-section" data-aos="fade-up">
+      <div class="video-copy">
+        <span class="section-tag">Product Walkthrough</span>
+        <h2>Open racks built for complete access, strong load support, and scalable networking layouts</h2>
+        <div class="video-copy-text">
+        <p>Reliable Hub open racks are engineered for environments where all-side access, structured cabling, and flexible equipment mounting are operational priorities. Their universal mounting pattern and robust upright design allow secure installation of 19" and 23" equipment in dynamic data and communication rooms.</p>
+        <p>With baying capability, reinforced top and base members, and high distributed load support, these racks provide a reliable platform for scalable network infrastructure while maintaining easy service access and efficient space use.</p>
+      </div>
+      </div>
+      <!-- <div class="video-frame">
+        <video controls preload="metadata" poster="uploads/video-banner.png">
+          <source src="uploads/selective-pallet-racking-demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div> -->
+    </section>
+    <section class="quote-board" data-aos="fade-up">
+      <form class="quote-form">
+        <h2>Enquiry Now</h2>
+        <div class="form-grid">
+          <label for="quote-name"><span>Name <span class="required">*</span></span><input id="quote-name" name="name" type="text" required></label>
+          <label for="quote-company"><span>Company Name <span class="required">*</span></span><input id="quote-company" name="company" type="text" required></label>
+          <label for="quote-email"><span>Email <span class="required">*</span></span><input id="quote-email" name="email" type="email" required></label>
+          <label for="quote-mobile"><span>Mobile No <span class="required">*</span></span><input id="quote-mobile" name="mobile" type="number" required></label>
+          <label for="quote-city"><span>City <span class="required">*</span></span><input id="quote-city" name="city" type="text" required></label>
+          <label for="quote-product"><span>Product <span class="required">*</span></span><select id="quote-product" name="product" required><option value="" disabled>Select Product</option><option value="wall-mounts">Wall Mounts</option><option value="open-racks" selected>Open Racks</option><option value="outdoor-racks">Outdoor Racks</option><option value="floor-standing-server-networking-racks">Floor Standing Server/Networking Racks</option><option value="customized-racks-consoles">Customized Racks & Consoles</option></select></label>
+          <label for="quote-source" class="full"><span>Source <span class="required">*</span></span><select id="quote-source" name="source" required><option value="" disabled selected>Select Source</option><option value="google">Google Search</option><option value="social-media">Social Media</option><option value="referral">Referral</option></select></label>
+          <label for="quote-brief" class="full"><span>Message</span><textarea id="quote-brief" name="brief" rows="6"></textarea></label>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </section>
+  </main>
+  <div id="footer-root"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImage = document.getElementById('mainProductImage');
+      const thumbButtons = document.querySelectorAll('.thumb-column .thumb-btn');
+      thumbButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const src = btn.dataset.src;
+          if (src && mainImage) {
+            mainImage.src = src;
+            thumbButtons.forEach(t => {
+              t.classList.remove('active-thumb');
+              t.removeAttribute('aria-current');
+            });
+            btn.classList.add('active-thumb');
+            btn.setAttribute('aria-current', 'true');
+          }
+        });
+      });
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

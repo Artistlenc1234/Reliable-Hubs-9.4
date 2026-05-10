@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hand Basket Trolley</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+  <link href="navbar.css" rel="stylesheet">
+  <link href="footer.css" rel="stylesheet">
+  <link href="selective-pallet.css" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar-root"></div>
+  <main class="selective-page">
+    <section class="product-detail" data-aos="fade-up">
+      <div class="product-gallery">
+        <div class="thumb-column">
+          <button type="button" class="thumb-btn active-thumb" data-src="uploads/Hand Basket Trolley/Hand-1-scaled.jpg" aria-current="true"><img src="uploads/Hand Basket Trolley/Hand-1-scaled.jpg" alt="Hand basket trolley front view"></button>
+          <button type="button" class="thumb-btn" data-src="uploads/Hand Basket Trolley/Hand-2-scaled.jpg"><img src="uploads/Hand Basket Trolley/Hand-2-scaled.jpg" alt="Basket trolley side view"></button>
+          <button type="button" class="thumb-btn" data-src="uploads/Hand Basket Trolley/Hand-3-scaled.jpg"><img src="uploads/Hand Basket Trolley/Hand-3-scaled.jpg" alt="Handle detail"></button>
+          <button type="button" class="thumb-btn" data-src="uploads/Hand Basket Trolley/Hand-4-scaled.jpg"><img src="uploads/Hand Basket Trolley/Hand-4-scaled.jpg" alt="Retail basket support"></button>
+          <button type="button" class="thumb-btn" data-src="uploads/Hand Basket Trolley/Hand-5-scaled.jpg"><img src="uploads/Hand Basket Trolley/Hand-5-scaled.jpg" alt="Wheel detail"></button>
+        </div>
+        <div class="main-photo">
+          <img id="mainProductImage" src="uploads/Hand Basket Trolley/Hand-1-scaled.jpg" alt="Hand Basket Trolley">
+        </div>
+      </div>
+      <div class="product-summary">
+        <h1>Hand Basket Trolley</h1>
+        <p>Hand Basket Trolley.</p>
+        <dl class="specs-grid">
+          <div><dt>Category</dt><dd>Hand Basket Trolley</dd></div>
+          <div><dt>Application</dt><dd>Retail shopping movement</dd></div>
+          <div><dt>Format</dt><dd>Compact basket trolley unit</dd></div>
+        </dl>
+        <h4>Features</h4>
+        <ul class="features">
+          <li>Hand Basket Trolley</li>
+          <li>Suitable for quick shopping operations</li>
+          <li>Supports customer convenience in compact aisles</li>
+          <li>Designed for daily store movement</li>
+        </ul>
+      </div>
+    </section>
+    <section class="info-list">
+      <div class="info-card" data-aos="zoom-in">Hand Basket Trolley for flexible in-store shopping.</div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="100">Useful for compact retail and convenience formats.</div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="200">Supports customer-friendly shopping flow.</div>
+    </section>
+    <section class="video-info-section" data-aos="fade-up">
+      <div class="video-copy">
+        <span class="section-tag">Product Walkthrough</span>
+        <h2>Hand Basket Trolley</h2>
+        <div class="video-copy-text">
+        <p>Hand Basket Trolley.</p>
+        <p>Built for practical and convenient retail usage.</p>
+      </div>
+      </div>
+      <!-- <div class="video-frame">
+        <video controls preload="metadata" poster="uploads/video-banner.png">
+          <source src="uploads/selective-pallet-racking-demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div> -->
+    </section>
+    <section class="quote-board" data-aos="fade-up">
+      <form class="quote-form">
+        <h2>Enquiry Now</h2>
+        <div class="form-grid">
+          <label for="quote-name"><span>Name <span class="required">*</span></span><input id="quote-name" name="name" type="text" required></label>
+          <label for="quote-company"><span>Company Name <span class="required">*</span></span><input id="quote-company" name="company" type="text" required></label>
+          <label for="quote-email"><span>Email <span class="required">*</span></span><input id="quote-email" name="email" type="email" required></label>
+          <label for="quote-mobile"><span>Mobile No <span class="required">*</span></span><input id="quote-mobile" name="mobile" type="number" required></label>
+          <label for="quote-city"><span>City <span class="required">*</span></span><input id="quote-city" name="city" type="text" required></label>
+          <label for="quote-product"><span>Product <span class="required">*</span></span><select id="quote-product" name="product" required><option value="" disabled>Select Product</option><option value="european-shopping-trolley">European Shopping Trolley</option><option value="asian-shopping-trolley">Asian Shopping Trolley</option><option value="german-shopping-trolley">German Shopping Trolley</option><option value="american-shopping-trolley">American Shopping Trolley</option><option value="plastic-shopping-trolley">Plastic Shopping Trolley</option><option value="hand-basket-trolley" selected>Hand Basket Trolley</option><option value="warehouse-trolley">Warehouse Trolley</option><option value="other-trolley">Other Trolley</option></select></label>
+          <label for="quote-source" class="full"><span>Source <span class="required">*</span></span><select id="quote-source" name="source" required><option value="" disabled selected>Select Source</option><option value="google">Google Search</option><option value="social-media">Social Media</option><option value="referral">Referral</option></select></label>
+          <label for="quote-brief" class="full"><span>Message</span><textarea id="quote-brief" name="brief" rows="6"></textarea></label>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </section>
+  </main>
+  <div id="footer-root"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImage = document.getElementById('mainProductImage');
+      const thumbButtons = document.querySelectorAll('.thumb-column .thumb-btn');
+      thumbButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const src = btn.dataset.src;
+          if (src && mainImage) {
+            mainImage.src = src;
+            thumbButtons.forEach(t => {
+              t.classList.remove('active-thumb');
+              t.removeAttribute('aria-current');
+            });
+            btn.classList.add('active-thumb');
+            btn.setAttribute('aria-current', 'true');
+          }
+        });
+      });
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

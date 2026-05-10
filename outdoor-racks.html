@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outdoor Racks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+  <link href="navbar.css" rel="stylesheet">
+  <link href="footer.css" rel="stylesheet">
+  <link href="selective-pallet.css" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar-root"></div>
+  <main class="selective-page">
+    <section class="product-detail" data-aos="fade-up">
+      <div class="product-gallery">
+        <div class="thumb-column">
+          <button type="button" class="thumb-btn active-thumb" data-src="uploads/Outdoor racks/outdoor-racks-1.jpg" aria-current="true"><img src="uploads/Outdoor racks/outdoor-racks-1.jpg" alt="Outdoor rack front view"></button>
+          <button type="button" class="thumb-btn" data-src="uploads/Outdoor racks/outdoor-racks-2.jpg"><img src="uploads/Outdoor racks/outdoor-racks-2.jpg" alt="Outdoor enclosure detail"></button>
+          
+        </div>
+        <div class="main-photo">
+          <img id="mainProductImage" src="uploads/Outdoor racks/outdoor-racks-1.jpg" alt="Outdoor Racks">
+        </div>
+      </div>
+      <div class="product-summary">
+        <h1>Outdoor Racks</h1>
+        <p>ODU racks are designed for outdoor weather conditions and fabricated from CRCA steel using CNC punching, bending, welding, and precision powder coating processes to meet high outdoor enclosure quality standards.</p>
+        <dl class="specs-grid">
+          <div><dt>Construction</dt><dd>Welded frame with integrated panels, top and bottom covers</dd></div>
+          <div><dt>Ranges</dt><dd>2U to 44U, depths 100 to 800 mm, width up to 1200 mm</dd></div>
+          <div><dt>Finish</dt><dd>RAL 7035, 7037, 9010 and 7032 texture matte</dd></div>
+        </dl>
+        <h4>Features</h4>
+        <ul class="features">
+          <li>Designed to perform in outdoor and exposed environmental conditions</li>
+          <li>Fan mounting provision available at top or front as per requirement</li>
+          <li>Top canopy improves water and dust resistance</li>
+          <li>Rear panel supports wall or pole mounting options</li>
+          <li>Front metal door with lock and key provides equipment security</li>
+          <li>Welded enclosure structure offers high rigidity for field installations</li>
+          <li>Supports stable operation of valuable network and telecom devices</li>
+          <li>Reduces weather-related disturbance from water and dust ingress</li>
+        </ul>
+      </div>
+    </section>
+    <section class="info-list">
+      <div class="info-card" data-aos="zoom-in">Ideal for telecom, utility, and remote networking infrastructure deployments.</div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="100">Provides secure weather-protected space for mission-critical outdoor equipment.</div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="200">Available in broad U-height and depth ranges for project-specific integration.</div>
+    </section>
+    <section class="video-info-section" data-aos="fade-up">
+      <div class="video-copy">
+        <span class="section-tag">Product Walkthrough</span>
+        <h2>Outdoor racks built for weather resistance, security, and reliable field operation</h2>
+        <div class="video-copy-text">
+        <p>Reliable Hub outdoor racks are engineered to protect valuable devices from harsh weather, dust, and water exposure while maintaining secure and serviceable equipment housing. Their welded enclosure design, canopy shielding, and locking front door support dependable long-term outdoor performance.</p>
+        <p>With configurable fan mounting, wall or pole installation options, and wide size availability, these units provide practical flexibility for telecom, industrial, and distributed infrastructure environments.</p>
+      </div>
+      </div>
+      <!-- <div class="video-frame">
+        <video controls preload="metadata" poster="uploads/video-banner.png">
+          <source src="uploads/selective-pallet-racking-demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div> -->
+    </section>
+    <section class="quote-board" data-aos="fade-up">
+      <form class="quote-form">
+        <h2>Enquiry Now</h2>
+        <div class="form-grid">
+          <label for="quote-name"><span>Name <span class="required">*</span></span><input id="quote-name" name="name" type="text" required></label>
+          <label for="quote-company"><span>Company Name <span class="required">*</span></span><input id="quote-company" name="company" type="text" required></label>
+          <label for="quote-email"><span>Email <span class="required">*</span></span><input id="quote-email" name="email" type="email" required></label>
+          <label for="quote-mobile"><span>Mobile No <span class="required">*</span></span><input id="quote-mobile" name="mobile" type="number" required></label>
+          <label for="quote-city"><span>City <span class="required">*</span></span><input id="quote-city" name="city" type="text" required></label>
+          <label for="quote-product"><span>Product <span class="required">*</span></span><select id="quote-product" name="product" required><option value="" disabled>Select Product</option><option value="wall-mounts">Wall Mounts</option><option value="open-racks">Open Racks</option><option value="outdoor-racks" selected>Outdoor Racks</option><option value="floor-standing-server-networking-racks">Floor Standing Server/Networking Racks</option><option value="customized-racks-consoles">Customized Racks & Consoles</option></select></label>
+          <label for="quote-source" class="full"><span>Source <span class="required">*</span></span><select id="quote-source" name="source" required><option value="" disabled selected>Select Source</option><option value="google">Google Search</option><option value="social-media">Social Media</option><option value="referral">Referral</option></select></label>
+          <label for="quote-brief" class="full"><span>Message</span><textarea id="quote-brief" name="brief" rows="6"></textarea></label>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </section>
+  </main>
+  <div id="footer-root"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImage = document.getElementById('mainProductImage');
+      const thumbButtons = document.querySelectorAll('.thumb-column .thumb-btn');
+      thumbButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const src = btn.dataset.src;
+          if (src && mainImage) {
+            mainImage.src = src;
+            thumbButtons.forEach(t => {
+              t.classList.remove('active-thumb');
+              t.removeAttribute('aria-current');
+            });
+            btn.classList.add('active-thumb');
+            btn.setAttribute('aria-current', 'true');
+          }
+        });
+      });
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

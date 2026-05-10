@@ -1,0 +1,1415 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --navbar-offset: 100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #333;
+    overflow-x: hidden;
+    padding-top: 100px;
+}
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 100px);
+    overflow: hidden;
+}
+/* -------------- */
+.slide {
+    /* Existing properties... */
+    background-repeat: no-repeat;
+    background-position: center center; /* This keeps the image centered as the screen shrinks */
+    background-size: cover; 
+}
+
+/* Mobile Fix: On small phones, the center of the image is usually better */
+@media (max-width: 768px) {
+    .slide {
+        background-position: 65% center; /* Shifts image slightly to show the subject better on mobile */
+    }
+}
+/* -------------- */
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 160px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* background: linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 34%, rgba(255, 255, 255, 0.28) 64%, rgba(255, 255, 255, 0) 100%); */
+    z-index: 0;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    transform: translate(-56px, 24px);
+}
+/* Target the Main Headline */
+.hero-content h1 {
+    color: #111111;
+    font-family: 'Lato', sans-serif;
+    font-size: 40px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    /* text-shadow: 0 2px 6px rgba(223, 181, 110, 0.7), 0 10px 24px rgba(0, 0, 0, 0.14); */
+}
+
+.hero-content h1::after {
+    content: "";
+    display: block;
+    width: 440px;
+    height: 3px;
+    margin: 18px 0 0;
+    background: #e67e22;
+    border-radius: 999px;
+}
+
+/* Target the Sub-line (Description) */
+.hero-content .sub-line {
+    color: #111111;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 16px;
+    max-width: 700px;
+    text-shadow: none;
+}
+
+/* If you want a specific slide to have a different color (e.g., Slide 4) */
+.slide:nth-child(4) .hero-content h1 {
+    color: #111111;
+}
+
+.sub-line {
+    color: #111111;
+    font-size: 18px;
+    margin-top: 16px;
+    max-width: 700px;
+    font-weight: 400;
+    text-shadow: none;
+}
+
+/* Dots for Navigation */
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 160px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #e67e22;
+    transform: scale(1.2);
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    padding: 12px 22px;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+}
+
+.slider-arrow-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+}
+
+.slider-arrow-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.prev-arrow {
+    left: 16px;
+}
+
+.next-arrow {
+    right: 16px;
+}
+
+.slider-arrow:hover {
+    color: #e67e22;
+    opacity: 0.9;
+    transform: translateY(calc(-50% - 2px));
+}
+
+.slider-arrow:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slide { padding: 0 24px; }
+    .slider-dots { left: 24px; }
+    .slider-arrow { padding: 10px 16px; }
+    .slider-arrow-icon { width: 50px; height: 50px; }
+    .prev-arrow { left: 8px; }
+    .next-arrow { right: 8px; }
+    .hero-content { transform: none; }
+    .hero-content h1 { font-size: 32px; }
+    .hero-content h1::after { width: 88px; margin-top: 16px; }
+    .sub-line { font-size: 15px; margin-top: 14px; }
+}
+
+.quick-section {
+    padding: 60px 40px;
+    background: #fff;
+    position: relative;
+}
+
+.cards-marquee {
+    overflow: hidden;
+    width: 100%;
+}
+
+.cards-track {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    width: max-content;
+    animation: quickLinksScroll 26s linear infinite;
+}
+
+.cards-marquee:hover .cards-track {
+    animation-play-state: paused;
+}
+
+.card-link {
+    display: block;
+    text-decoration: none;
+    flex: 0 0 320px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: 0.6s;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+    opacity: 0.92;
+    transform: translateY(20px);
+    transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+.icon-box img {
+    width: 45px;
+    height: auto;
+    margin-bottom: 5px;
+    filter: brightness(0) invert(1);
+}
+
+.overlay h3 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    max-width: 200px;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes quickLinksScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-50% - 10px));
+    }
+}
+
+.welcome-section {
+    text-align: center;
+    padding: 80px 10%;
+    background: #fff;
+}
+
+.welcome-section h2 {
+    color: #e67e22;
+}
+
+.read-more-btn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: 1px solid #e67e22;
+    background: transparent;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.read-more-btn:hover {
+    background: #e67e22;
+    color: white;
+}
+
+.video-showcase {
+    position: relative;
+    padding: 0 0 190px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.video-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 16px;
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border: 0;
+}
+
+.video-decoration {
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    width: 320px;
+    height: 230px;
+    background-image: url('uploads/set 2.png');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 2050px auto;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.achievements-section {
+    position: relative;
+    --achievements-header-height: 150px;
+    background: #fff;
+    padding-bottom: 80px;
+    font-family: 'Lato', sans-serif;
+    overflow-x: clip;
+    overflow-y: visible;
+}
+
+.achievements-header {
+    background: #cccccc;
+    position: sticky;
+    top: var(--navbar-offset);
+    z-index: 6;
+    min-height: var(--achievements-header-height);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 0 10% 24px;
+    box-shadow: 0 18px 36px rgba(17, 17, 17, 0.08);
+}
+
+.achievements-header h2 {
+    font-size: 90px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: -35px;
+    letter-spacing: -2px;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.achievements-header-label {
+    position: absolute;
+    left: 10%;
+    bottom: 24px;
+    display: block;
+    width: auto;
+    max-width: calc(100% - 20%);
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #fff;
+    font-size: 90px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.achievements-header.has-active-subheader h2 {
+    opacity: 0;
+    transform: translateY(16px);
+}
+
+.achievements-header.has-active-subheader .achievements-header-label {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.achievements-content {
+    position: relative;
+    max-width: 1100px;
+    margin: 80px auto;
+    --timeline-progress: 0;
+}
+
+.journey-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    --subheader-shift: 0px;
+    --subheader-opacity: 0;
+    --subheader-scale: 0.94;
+}
+
+.journey-transition {
+    position: relative;
+    height: 120px;
+    margin: 14px 0 34px;
+}
+
+.journey-transition::before {
+    content: none;
+}
+
+.journey-transition span {
+    display: none;
+}
+
+.journey-subheader {
+    color: #f39c12;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 42px;
+    text-align: center;
+    position: relative;
+    top: auto;
+    z-index: 1;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 24px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(10px);
+    transform: translate3d(var(--subheader-shift), calc((1 - var(--subheader-opacity)) * 24px), 0) scale(var(--subheader-scale));
+    opacity: var(--subheader-opacity);
+    will-change: transform, opacity;
+    transition: box-shadow 0.45s ease, letter-spacing 0.45s ease;
+}
+
+.journey-timeline {
+    position: relative;
+    padding: 10px 0;
+}
+
+.journey-timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(39, 174, 96, 0.16);
+    transform: translateX(-50%);
+}
+
+.journey-timeline::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #f39c12 0%, #27ae60 100%);
+    transform: translateX(-50%) scaleY(var(--timeline-progress));
+    transform-origin: top center;
+    opacity: 0.95;
+}
+
+.journey-item {
+    position: relative;
+    width: 50%;
+    margin-bottom: 40px;
+    opacity: 0;
+    filter: blur(10px);
+    transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.85s ease, filter 0.85s ease;
+}
+
+.journey-item:last-child {
+    margin-bottom: 0;
+}
+
+.journey-item.left {
+    padding-right: 70px;
+    text-align: right;
+    transform: translate3d(-46px, 28px, 0);
+}
+
+.journey-item.right {
+    margin-left: 50%;
+    padding-left: 70px;
+    text-align: left;
+    transform: translate3d(46px, 28px, 0);
+}
+
+.journey-item::before {
+    --journey-dot-scale: 1;
+    content: "";
+    position: absolute;
+    top: 37px;
+    left: 100%;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #27ae60;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.18);
+    z-index: 2;
+    transform: translate(-50%, -50%) scale(var(--journey-dot-scale));
+    transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease;
+}
+
+.journey-item.left::before {
+    left: 100%;
+}
+
+.journey-item.right::before {
+    left: 0;
+}
+
+.journey-card {
+    position: relative;
+    display: inline-block;
+    max-width: 360px;
+    padding: 10px 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.journey-card::after {
+    content: "";
+    position: absolute;
+    top: 36px;
+    width: 54px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(243, 156, 18, 0.82), rgba(39, 174, 96, 0.82));
+    transform: scaleX(0.3);
+    opacity: 0.35;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease;
+}
+
+.journey-item.left .journey-card::after {
+    right: -54px;
+}
+
+.journey-item.right .journey-card::after {
+    left: -54px;
+}
+
+.journey-year {
+    color: #f39c12;
+    font-size: 30px;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 10px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.journey-card h3 {
+    margin: 0;
+    color: #111;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.journey-item.left .journey-card {
+    border-right: 1px solid rgba(0, 0, 0, 0.14);
+    padding-right: 22px;
+}
+
+.journey-item.right .journey-card {
+    border-left: 1px solid rgba(0, 0, 0, 0.14);
+    padding-left: 22px;
+}
+
+.achievements-section.is-animated .journey-block.is-active .journey-subheader {
+    letter-spacing: 0.22em;
+    box-shadow: 0 16px 36px rgba(243, 156, 18, 0.12);
+}
+
+.achievements-section.is-animated .journey-item.is-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
+}
+
+.achievements-section.is-animated .journey-item.is-visible::before {
+    --journey-dot-scale: 1.12;
+    background: #f39c12;
+    box-shadow: 0 0 0 4px rgba(243, 156, 18, 0.16), 0 0 24px rgba(243, 156, 18, 0.2);
+}
+
+.achievements-section.is-animated .journey-item.is-visible .journey-card::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.journey-transition {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease;
+}
+
+.journey-transition.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.overlap-wrapper {
+    position: relative;
+}
+
+.manufacturing {
+    background: #e67e22;
+    color: #fff;
+    padding: 100px 10%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.specialization {
+    background: #333;
+    color: white;
+    padding: 100px 10%;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px -20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.inner-large-title {
+    font-size: 80px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 40px;
+    letter-spacing: -2px;
+}
+
+.intro-text {
+    color: #000;
+    max-width: 850px;
+    margin-bottom: 60px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.excellence-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    row-gap: 50px;
+}
+
+.grid-item {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    transition: 0.3s;
+}
+
+.rd-item .grid-content {
+    margin-left: 8px;
+}
+
+.grid-icon-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+    filter: brightness(0) invert(1);
+}
+
+.title-underline {
+    width: 100%;
+    height: 1.5px;
+    background: rgba(8, 198, 17, 0.4);
+    margin-bottom: 12px;
+}
+
+.grid-content p {
+    color: #000;
+}
+
+.spec-intro {
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.spec-list .grid-content p {
+    color: #fff;
+}
+
+.spec-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.spec-image img {
+    width: 100%;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+
+.feature-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.spec-icon {
+    width: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.clients-header {
+    background: #e5e5e5;
+    height: 180px;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 10%;
+}
+
+.clients-header h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 100px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: -20px;
+}
+
+.clients {
+    padding: 80px 60px;
+    text-align: center;
+    background: #fff;
+}
+
+.client-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.client-logos img {
+    max-height: 50px;
+    filter: grayscale(1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.client-logos img:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.global-presence {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.global-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1.2fr;
+    width: 100%;
+}
+
+.global-item {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.global-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-box {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    padding: 15px 25px;
+    border-radius: 8px;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.overlay-box h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    line-height: 1.2;
+}
+
+@media (max-width: 1200px) {
+    .quick-section {
+        padding: 60px 20px;
+    }
+
+    .hero {
+        padding-left: 120px;
+    }
+
+    .global-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 992px) {
+    .card-link {
+        flex-basis: 280px;
+    }
+
+    .hero {
+        padding-left: 60px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --navbar-offset: 92px;
+    }
+
+    body {
+        padding-top: 92px;
+    }
+
+    .hero {
+        padding: 100px 24px 40px;
+        min-height: auto;
+        height: auto;
+        text-align: left;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .video-showcase {
+        padding-bottom: 100px;
+    }
+
+    .video-decoration {
+        bottom: -10px;
+        width: 220px;
+        height: 160px;
+        background-size: 1450px auto;
+    }
+
+    .cards-track {
+        animation-duration: 20s;
+    }
+
+    .card-link {
+        flex-basis: 240px;
+    }
+
+    .achievements-section {
+        padding-bottom: 56px;
+    }
+
+    .achievements-content {
+        margin: 32px 16px 0;
+    }
+
+    .journey-block {
+        padding: 22px 18px 24px;
+        border-radius: 28px;
+        background: linear-gradient(180deg, #fffaf2 0%, #ffffff 100%);
+        box-shadow: 0 18px 36px rgba(17, 17, 17, 0.08);
+    }
+
+    .journey-transition {
+        height: 28px;
+        margin: 16px 0;
+        opacity: 1;
+        transform: none;
+    }
+
+    .journey-subheader {
+        position: static;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        letter-spacing: 0.16em;
+        margin-bottom: 20px;
+        padding: 10px 14px;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(243, 156, 18, 0.14);
+        backdrop-filter: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .achievements-section.is-animated .journey-block.is-visible .journey-subheader,
+    .achievements-section.is-animated .journey-block.is-active .journey-subheader {
+        opacity: 1;
+        transform: none;
+    }
+
+    .journey-block:first-of-type .journey-subheader,
+    .journey-block:last-of-type .journey-subheader {
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: center;
+        text-align: center;
+        transform: none;
+    }
+
+    .journey-timeline::before,
+    .journey-timeline::after {
+        left: 22px;
+        transform: none;
+    }
+
+    .journey-timeline::after {
+        transform: scaleY(var(--timeline-progress));
+        transform-origin: top center;
+    }
+
+    .journey-item,
+    .journey-item.left,
+    .journey-item.right {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 56px;
+        padding-right: 0;
+        text-align: left;
+        margin-bottom: 18px;
+        transform: translate3d(0, 26px, 0);
+    }
+
+    .journey-item::before,
+    .journey-item.left::before,
+    .journey-item.right::before {
+        left: 22px;
+        right: auto;
+        top: 31px;
+        transform: translate(-50%, -50%) scale(var(--journey-dot-scale));
+    }
+
+    .journey-card {
+        display: block;
+        max-width: none;
+        padding: 14px 16px 14px 18px;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 14px 28px rgba(17, 17, 17, 0.06);
+    }
+
+    .journey-card::after,
+    .journey-item.left .journey-card::after,
+    .journey-item.right .journey-card::after {
+        left: -34px;
+        right: auto;
+        width: 34px;
+        top: 30px;
+    }
+
+    .journey-year {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .journey-card h3 {
+        font-size: 18px;
+        line-height: 1.45;
+    }
+
+    .journey-card h3 br {
+        display: none;
+    }
+
+    .journey-item.left .journey-card,
+    .journey-item.right .journey-card {
+        border-left: 2px solid rgba(243, 156, 18, 0.22);
+        border-right: 0;
+        padding-left: 18px;
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .achievements-section.is-animated .journey-block.is-active .journey-subheader {
+        transform: none;
+        letter-spacing: 0.12em;
+        box-shadow: none;
+    }
+
+    .achievements-header {
+        position: relative;
+        top: auto;
+        height: 120px;
+        padding: 0 20px;
+        align-items: center;
+        box-shadow: none;
+    }
+
+    .achievements-header h2 {
+        font-size: 54px;
+        line-height: 0.95;
+        margin-bottom: 0;
+        letter-spacing: -1px;
+    }
+
+    .achievements-header-label {
+        left: 20px;
+        bottom: 50%;
+        max-width: calc(100% - 40px);
+        padding: 0;
+        font-size: 54px;
+        letter-spacing: -1px;
+        transform: translateY(50%) scale(0.96);
+    }
+
+    .achievements-header.has-active-subheader h2 {
+        transform: translateY(12px);
+    }
+
+    .achievements-header.has-active-subheader .achievements-header-label {
+        transform: translateY(50%) scale(1);
+    }
+
+    .manufacturing,
+    .specialization {
+        padding: 80px 18px;
+    }
+
+    .manufacturing {
+        position: relative;
+        top: auto;
+        height: auto;
+        min-height: auto;
+        align-items: flex-start;
+    }
+
+    .manufacturing .container {
+        width: 100%;
+    }
+
+    .manufacturing .inner-large-title {
+        font-size: 44px;
+        line-height: 1;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
+    }
+
+    .intro-text {
+        max-width: 100%;
+        margin-bottom: 36px;
+        font-size: 15px;
+    }
+
+    .excellence-grid {
+        grid-template-columns: 1fr;
+        row-gap: 28px;
+        column-gap: 0;
+    }
+
+    .grid-item {
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    .rd-item .grid-content {
+        margin-left: 6px;
+    }
+
+    .grid-content h4 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .spec-content {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .specialization .inner-large-title {
+        font-size: 42px;
+        line-height: 1.02;
+        letter-spacing: -0.5px;
+        margin-bottom: 18px;
+    }
+
+    .spec-intro {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+
+    .spec-intro br {
+        display: none;
+    }
+
+    .feature-item {
+        gap: 14px;
+        margin-bottom: 24px;
+    }
+
+    .spec-icon {
+        width: 34px;
+        flex-shrink: 0;
+    }
+
+    .clients {
+        padding: 44px 20px;
+    }
+
+    .clients-header {
+        height: auto;
+        min-height: 100px;
+        padding: 18px 20px;
+        align-items: center;
+    }
+
+    .clients-header h2 {
+        font-size: 48px;
+        line-height: 1;
+        margin-bottom: 0;
+        letter-spacing: -0.5px;
+    }
+
+    .client-logos {
+        gap: 28px 24px;
+    }
+
+    .client-logos img {
+        max-height: 40px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievements-section {
+        padding-bottom: 44px;
+    }
+
+    .hero {
+        padding: 90px 18px 36px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .video-showcase {
+        padding-bottom: 96px;
+    }
+
+    .video-decoration {
+        bottom: -8px;
+        width: 150px;
+        height: 108px;
+        background-size: 980px auto;
+    }
+
+    .achievements-content {
+        margin: 24px 12px 0;
+    }
+
+    .achievements-header {
+        padding-left: 6%;
+        height: auto;
+        min-height: 100px;
+        padding: 18px;
+    }
+
+    .achievements-header h2 {
+        font-size: 38px;
+        line-height: 1;
+        margin-bottom: 0;
+        letter-spacing: 0;
+    }
+
+    .achievements-header-label {
+        left: 18px;
+        max-width: calc(100% - 36px);
+        font-size: 38px;
+        padding: 0;
+        letter-spacing: 0;
+    }
+
+    .journey-block {
+        padding: 18px 14px 20px;
+        border-radius: 22px;
+    }
+
+    .journey-subheader {
+        width: 100%;
+        font-size: 12px;
+        margin-bottom: 18px;
+        padding: 9px 12px;
+        letter-spacing: 0.14em;
+    }
+
+    .journey-item,
+    .journey-item.right {
+        padding-left: 48px;
+    }
+
+    .journey-timeline::before,
+    .journey-timeline::after {
+        left: 18px;
+    }
+
+    .journey-item::before,
+    .journey-item.left::before,
+    .journey-item.right::before {
+        left: 18px;
+    }
+
+    .journey-card {
+        padding: 13px 14px 13px 16px;
+        border-radius: 16px;
+    }
+
+    .journey-card::after,
+    .journey-item.left .journey-card::after,
+    .journey-item.right .journey-card::after {
+        left: -30px;
+        width: 30px;
+    }
+
+    .journey-year {
+        font-size: 22px;
+    }
+
+    .journey-card h3 {
+        font-size: 17px;
+    }
+
+    .clients-header {
+        min-height: 84px;
+        padding: 14px 18px;
+        align-items: center;
+    }
+
+    .clients-header h2 {
+        font-size: 34px;
+        line-height: 1;
+        margin-bottom: 0;
+        letter-spacing: 0;
+    }
+
+    .inner-large-title {
+        font-size: 54px;
+        margin-bottom: 28px;
+    }
+
+    .manufacturing {
+        padding: 56px 18px;
+    }
+
+    .manufacturing .inner-large-title {
+        font-size: 34px;
+        line-height: 1.05;
+        margin-bottom: 16px;
+        letter-spacing: 0;
+    }
+
+    .intro-text {
+        font-size: 14px;
+        margin-bottom: 28px;
+    }
+
+    .grid-item {
+        gap: 14px;
+    }
+
+    .grid-icon-img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .grid-content h4 {
+        font-size: 16px;
+    }
+
+    .specialization {
+        padding: 56px 18px;
+    }
+
+    .specialization .inner-large-title {
+        font-size: 32px;
+        line-height: 1.08;
+        margin-bottom: 14px;
+        letter-spacing: 0;
+    }
+
+    .spec-intro {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .spec-content {
+        gap: 20px;
+    }
+
+    .spec-image img {
+        border-radius: 3px;
+    }
+
+    .feature-item {
+        margin-bottom: 18px;
+    }
+
+    .feature-item .grid-content h4 {
+        font-size: 17px;
+        margin-bottom: 6px;
+    }
+
+    .clients {
+        padding: 36px 16px;
+    }
+
+    .client-logos {
+        gap: 20px 16px;
+        justify-content: center;
+    }
+
+    .client-logos img {
+        max-height: 34px;
+    }
+}

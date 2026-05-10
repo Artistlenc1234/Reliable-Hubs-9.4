@@ -1,0 +1,602 @@
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 60px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.left-nav,
+.right-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    max-height: 60px;
+}
+
+.divider {
+    height: 40px;
+    width: 1px;
+    background: #ddd;
+}
+
+.menu-trigger,
+.product-trigger,
+.contact-link {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-link-icon {
+    display: none;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.contact-link-text {
+    display: inline;
+}
+
+.menu-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-trigger:focus,
+.product-trigger:focus,
+.contact-link:focus {
+    outline: 2px solid #e67e22;
+    outline-offset: 2px;
+}
+
+.product-wrapper {
+    position: relative;
+}
+
+.product-wrapper[data-open="true"] .product-trigger,
+.product-wrapper .product-trigger:hover {
+    color: #e67e22;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 250px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.3s ease;
+    list-style: none;
+    padding: 15px 0;
+    z-index: 10;
+}
+
+.product-wrapper[data-open="true"] .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    position: relative;
+    padding: 12px 25px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-label {
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-menu li:hover .dropdown-label {
+    color: #e67e22;
+}
+
+.sub-dropdown {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: 0.3s ease;
+    list-style: none;
+    padding: 10px 0;
+}
+
+.dropdown-menu li:hover .sub-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.sub-dropdown li {
+    padding: 6px 20px;
+    font-size: 13px;
+}
+
+.sub-sub-dropdown {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: white;
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: 0.3s ease;
+    list-style: none;
+    padding: 8px 0;
+}
+
+.sub-dropdown li:hover .sub-sub-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.sub-dropdown a,
+.dropdown-label {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.search-icon-img {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-icon-img:hover {
+    transform: scale(1.1);
+}
+
+.side-drawer {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 450px;
+    background: white;
+    z-index: 3000;
+    transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 100px 60px;
+    overflow-y: auto;
+}
+
+#sideDrawer {
+    left: -100%;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+}
+
+#sideDrawer.active {
+    left: 0;
+}
+
+#contactDrawer {
+    right: -100%;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+}
+
+#contactDrawer.active {
+    right: 0;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    z-index: 2500;
+    display: none;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+.side-drawer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-drawer ul li {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.side-drawer ul li:hover {
+    color: #e67e22;
+    padding-left: 10px;
+}
+
+.drawer-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #e67e22;
+    margin-bottom: 30px;
+}
+
+/* -------------------- */
+.side-drawer ul li a {
+    text-decoration: none;
+    color: inherit; /* Inherits the #333 or hover color from the <li> */
+    display: block;  /* Makes the whole line clickable */
+    width: 100%;
+}
+
+.side-menu-contact-trigger {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* Optional: adjustment for your existing hover effect */
+.side-drawer ul li:hover a {
+    color: #e67e22; 
+}
+
+.side-drawer ul li:hover .side-menu-contact-trigger {
+    color: #e67e22;
+}
+/* -------------------- */
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.menu-item a {
+    flex: 1;
+}
+
+.submenu-toggle {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+    background: #fff7f0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.submenu-toggle .arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #e67e22;
+    border-bottom: 2px solid #e67e22;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+.has-submenu.open > .menu-item .submenu-toggle .arrow {
+    transform: rotate(225deg);
+}
+
+.sub-menu {
+    display: none;
+    margin-top: 14px;
+    margin-left: 14px;
+    padding-left: 18px !important;
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.has-submenu.open > .sub-menu {
+    display: block;
+}
+
+.sub-menu li {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    margin-bottom: 14px !important;
+}
+
+.sub-menu .sub-menu li {
+    font-size: 15px !important;
+}
+
+.contact-info-box {
+    margin-bottom: 25px;
+}
+
+.contact-info-box h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.contact-info-box p {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.contact-drawer-form {
+    display: grid;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.contact-drawer-form label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #7b7f86;
+}
+
+.contact-drawer-form input,
+.contact-drawer-form textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 96px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font: inherit;
+    color: #2b2d31;
+}
+
+.contact-drawer-form input {
+    min-height: 0;
+}
+
+.contact-drawer-form textarea:focus,
+.contact-drawer-form input:focus {
+    outline: none;
+    border-color: #e67e22;
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.18);
+}
+
+.contact-btn {
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f59436, #e67e22);
+    color: #fff;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.close-btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+    font-size: 30px;
+    background: none;
+    border: none;
+}
+
+#contactDrawer .close-btn {
+    right: auto;
+    left: 40px;
+}
+
+.menu-trigger,
+.contact-link,
+.close-btn {
+    font-family: inherit;
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 0 30px;
+        height: 88px;
+    }
+
+    .side-drawer {
+        width: 85%;
+        padding: 80px 40px;
+    }
+
+    .product-wrapper {
+        display: none;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .logo img {
+        max-height: 52px;
+    }
+
+    .search-icon-img {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 20px;
+        height: 78px;
+    }
+
+    .left-nav,
+    .right-nav {
+        gap: 12px;
+    }
+
+    .menu-trigger,
+    .contact-link {
+        font-size: 14px;
+    }
+
+    .logo img {
+        max-height: 44px;
+    }
+
+    .contact-link {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 999px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        background: rgba(255, 255, 255, 0.88);
+    }
+
+    .contact-link-icon {
+        display: inline-block;
+    }
+
+    .contact-link-text {
+        display: none;
+    }
+
+    .side-drawer {
+        width: min(92vw, 420px);
+        padding: 82px 24px 40px;
+    }
+
+    .side-drawer ul li {
+        font-size: 22px;
+        margin-bottom: 22px;
+    }
+
+    .drawer-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 14px;
+        height: 72px;
+    }
+
+    .menu-trigger,
+    .contact-link {
+        font-size: 13px;
+    }
+
+    .menu-trigger {
+        padding: 0;
+    }
+
+    .contact-link {
+        white-space: nowrap;
+    }
+
+    .logo img {
+        max-height: 36px;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .side-drawer {
+        width: 92vw;
+        padding: 92px 20px 60px;
+    }
+
+    .side-drawer ul li {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+
+    .sub-menu li {
+        font-size: 14px !important;
+    }
+
+    .close-btn {
+        top: 26px;
+        right: 18px;
+        font-size: 26px;
+    }
+
+    /* Prevent dropdown menus from overflowing the viewport on phones */
+    .product-wrapper .dropdown-menu {
+        max-width: calc(100vw - 28px);
+        overflow-y: auto;
+        min-width: 180px;
+    }
+
+    /* On touch devices, hover doesn't reliably work. Stack submenus. */
+    .sub-dropdown,
+    .sub-sub-dropdown {
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        box-shadow: none !important;
+        min-width: auto !important;
+        padding: 0 !important;
+    }
+
+    .sub-dropdown li,
+    .sub-sub-dropdown li {
+        padding: 8px 16px !important;
+    }
+}

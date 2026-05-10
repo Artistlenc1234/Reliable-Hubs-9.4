@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wall Mounts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+  <link href="navbar.css" rel="stylesheet">
+  <link href="footer.css" rel="stylesheet">
+  <link href="selective-pallet.css" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar-root"></div>
+  <main class="selective-page">
+    <section class="product-detail" data-aos="fade-up">
+      <div class="product-gallery">
+        <div class="thumb-column">
+          <button type="button" class="thumb-btn active-thumb" data-src="uploads/Wall Mounts/wall-mount.jpg" aria-current="true"><img src="uploads/Wall Mounts/wall-mount.jpg" alt="Wall mount rack front view"></button>
+          <button type="button" class="thumb-btn" data-src="uploads/Wall Mounts/wall-mount-2.jpg"><img src="uploads/Wall Mounts/wall-mount-2.jpg" alt="Compact network rack"></button>
+          
+        </div>
+        <div class="main-photo">
+          <img id="mainProductImage" src="uploads/Wall Mounts/wall-mount.jpg" alt="Wall Mounts">
+        </div>
+      </div>
+      <div class="product-summary">
+        <h1>Wall Mounts</h1>
+        <p>Reliable Hub's wall mounts are modular and user-friendly solutions for end users and networking system integrators, offering easy installation and high flexibility in compact IT and communication environments.</p>
+        <dl class="specs-grid">
+          <div><dt>Mounting Standard</dt><dd>19" equipment mounting angles with square slots for M6 cage nuts</dd></div>
+          <div><dt>Ranges</dt><dd>2U, 4U, 6U, 9U, 12U, 15U and 18U in 400, 450, 500 and 600 mm depths</dd></div>
+          <div><dt>Finish</dt><dd>Black, Light White and Grey</dd></div>
+        </dl>
+        <h4>Features</h4>
+        <ul class="features">
+          <li>Front door with robust frame, toughened glass, lock and key security</li>
+          <li>Loaded hinges support left or right door opening up to 110 degrees</li>
+          <li>Modular design allows simple deployment and future expansion</li>
+          <li>High flexibility for networking SI and compact rack installations</li>
+          <li>Efficient vertical utilization with DIN rail-compatible rack structure</li>
+          <li>Easy monitoring and access reduce handling time and operating effort</li>
+          <li>Cost-effective mounting for switches and patch panels</li>
+          <li>Uniform cable management improves neatness and serviceability</li>
+        </ul>
+      </div>
+    </section>
+    <section class="info-list">
+      <div class="info-card" data-aos="zoom-in">Ideal for compact networking rooms, branch offices, and structured cabling zones.</div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="100">Provides secure, accessible enclosure space for daily network operations.</div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="200">Supports standardized 19" equipment mounting with reliable cable discipline.</div>
+    </section>
+    <section class="video-info-section" data-aos="fade-up">
+      <div class="video-copy">
+        <span class="section-tag">Product Walkthrough</span>
+        <h2>Wall mount racks built for secure compact networking and flexible installation</h2>
+        <div class="video-copy-text">
+        <p>Reliable Hub wall mounts are designed for efficient networking installations where floor space is limited but equipment accessibility remains critical. Their modular layout, reversible door opening, and lockable toughened-glass front provide practical security and service convenience.</p>
+        <p>With support for standard 19" mounting, multiple U-height options, and depth variants, these racks help integrators deliver organized, cost-effective switch and patch panel deployments with cleaner cable management.</p>
+      </div>
+      </div>
+      <!-- <div class="video-frame">
+        <video controls preload="metadata" poster="uploads/video-banner.png">
+          <source src="uploads/selective-pallet-racking-demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div> -->
+    </section>
+    <section class="quote-board" data-aos="fade-up">
+      <form class="quote-form">
+        <h2>Enquiry Now</h2>
+        <div class="form-grid">
+          <label for="quote-name"><span>Name <span class="required">*</span></span><input id="quote-name" name="name" type="text" required></label>
+          <label for="quote-company"><span>Company Name <span class="required">*</span></span><input id="quote-company" name="company" type="text" required></label>
+          <label for="quote-email"><span>Email <span class="required">*</span></span><input id="quote-email" name="email" type="email" required></label>
+          <label for="quote-mobile"><span>Mobile No <span class="required">*</span></span><input id="quote-mobile" name="mobile" type="number" required></label>
+          <label for="quote-city"><span>City <span class="required">*</span></span><input id="quote-city" name="city" type="text" required></label>
+          <label for="quote-product"><span>Product <span class="required">*</span></span><select id="quote-product" name="product" required><option value="" disabled>Select Product</option><option value="wall-mounts" selected>Wall Mounts</option><option value="open-racks">Open Racks</option><option value="outdoor-racks">Outdoor Racks</option><option value="floor-standing-server-networking-racks">Floor Standing Server/Networking Racks</option><option value="customized-racks-consoles">Customized Racks & Consoles</option></select></label>
+          <label for="quote-source" class="full"><span>Source <span class="required">*</span></span><select id="quote-source" name="source" required><option value="" disabled selected>Select Source</option><option value="google">Google Search</option><option value="social-media">Social Media</option><option value="referral">Referral</option></select></label>
+          <label for="quote-brief" class="full"><span>Message</span><textarea id="quote-brief" name="brief" rows="6"></textarea></label>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </section>
+  </main>
+  <div id="footer-root"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImage = document.getElementById('mainProductImage');
+      const thumbButtons = document.querySelectorAll('.thumb-column .thumb-btn');
+      thumbButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const src = btn.dataset.src;
+          if (src && mainImage) {
+            mainImage.src = src;
+            thumbButtons.forEach(t => {
+              t.classList.remove('active-thumb');
+              t.removeAttribute('aria-current');
+            });
+            btn.classList.add('active-thumb');
+            btn.setAttribute('aria-current', 'true');
+          }
+        });
+      });
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

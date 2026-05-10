@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Solutions</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link href="navbar.css" rel="stylesheet">
+    <link href="solutions.css" rel="stylesheet">
+    <link href="footer.css" rel="stylesheet">
+    <style>
+        .retail-hero {
+            --retail-box-width: 60px;
+            --retail-box-height: 55px;
+            --retail-panel-width: min(64.5%, 700px);
+            --retail-left-cluster-left: 0px;
+            position: relative;
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+            height: clamp(320px, 35vw, 405px);
+            min-height: 320px;
+            padding: 0;
+            background: #ffffff;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .retail-hero__image {
+            position: absolute;
+            inset: 0;
+            background-image: url('uploads/Rectangle 68-6.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .retail-hero__panel {
+            position: relative;
+            z-index: 1;
+            width: var(--retail-panel-width);
+            min-width: 535px;
+            background: #f3f3f3;
+            clip-path: polygon(0 0, 79% 0, 100% 100%, 0 100%);
+            display: flex;
+            align-items: center;
+            padding: 28px 116px 28px 112px;
+        }
+
+        .retail-hero__content {
+            position: relative;
+            z-index: 2;
+            transform: translate(48px, 24px);
+        }
+
+        .retail-hero__content h1 {
+            margin: 0;
+            color: #0c1118;
+            font-size: 55px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 720;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+        }
+
+        .retail-hero__box {
+            position: absolute;
+            z-index: 2;
+            width: var(--retail-box-width);
+            height: var(--retail-box-height);
+            display: block;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .retail-hero__box--top-a {
+            top: 0;
+            left: var(--retail-left-cluster-left);
+        }
+
+        .retail-hero__box--top-b {
+            top: 0;
+            left: calc(var(--retail-left-cluster-left) + var(--retail-box-width));
+        }
+
+        .retail-hero__box--top-c {
+            top: var(--retail-box-height);
+            left: var(--retail-left-cluster-left);
+        }
+
+        .retail-hero__box--top-d {
+            top: calc(var(--retail-box-height) * 2);
+            left: calc(var(--retail-left-cluster-left) + var(--retail-box-width));
+        }
+
+        .retail-hero__box--bottom-a {
+            bottom: 0;
+            left: calc(var(--retail-panel-width) - 196px);
+        }
+
+        .retail-hero__box--bottom-b {
+            bottom: var(--retail-box-height);
+            left: calc(var(--retail-panel-width) - 132px);
+        }
+
+        .retail-hero__box--bottom-c {
+            bottom: 0;
+            left: calc(var(--retail-panel-width) - 68px);
+        }
+
+        .retail-hero__box--bottom-d {
+            bottom: 0;
+            left: calc(var(--retail-panel-width) - 68px + var(--retail-box-width));
+        }
+
+        .retail-hero__box--image-top-a {
+            top: 0;
+            right: 132px;
+        }
+
+        .retail-hero__box--image-top-b {
+            top: var(--retail-box-height);
+            right: 68px;
+        }
+
+        @media (max-width: 768px) {
+            .retail-hero {
+                --retail-panel-width: 87%;
+                min-height: 345px;
+                height: auto;
+            }
+
+            .retail-hero__panel {
+                min-width: 0;
+                padding: 68px 58px 34px 64px;
+                clip-path: polygon(0 0, 84% 0, 100% 100%, 0 100%);
+            }
+
+            .retail-hero__content h1 {
+                font-size: clamp(1.8rem, 8vw, 2.5rem);
+            }
+
+            .retail-hero__box--bottom-a {
+                left: calc(var(--retail-panel-width) - 184px);
+            }
+
+            .retail-hero__box--bottom-b {
+                left: calc(var(--retail-panel-width) - 120px);
+            }
+
+            .retail-hero__box--bottom-c {
+                left: calc(var(--retail-panel-width) - 56px);
+            }
+
+            .retail-hero__box--bottom-d {
+                left: calc(var(--retail-panel-width) - 104px + var(--retail-box-width));
+            }
+
+            .retail-hero__box--image-top-a {
+                right: 104px;
+            }
+
+            .retail-hero__box--image-top-b {
+                right: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .retail-hero {
+                --retail-panel-width: 89%;
+                min-height: 305px;
+            }
+
+            .retail-hero__panel {
+                padding: 60px 44px 26px 40px;
+            }
+
+            .retail-hero__box--top-b {
+                left: calc(var(--retail-left-cluster-left) + var(--retail-box-width));
+            }
+
+            .retail-hero__box--top-c {
+                top: var(--retail-box-height);
+            }
+
+            .retail-hero__box--top-d {
+                top: calc(var(--retail-box-height) * 2);
+            }
+
+            .retail-hero__box--bottom-a {
+                left: calc(var(--retail-panel-width) - 172px);
+            }
+
+            .retail-hero__box--bottom-b {
+                left: calc(var(--retail-panel-width) - 108px);
+            }
+
+            .retail-hero__box--bottom-c {
+                left: calc(var(--retail-panel-width) - 44px);
+            }
+
+            .retail-hero__box--bottom-d {
+                left: calc(var(--retail-panel-width) - 92px + var(--retail-box-width));
+            }
+
+            .retail-hero__box--image-top-a {
+                right: 74px;
+            }
+
+            .retail-hero__box--image-top-b {
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-root"></div>
+
+    <main class="solutions-page">
+        <section class="solutions-hero retail-hero" aria-label="Retail solutions banner">
+            <div class="retail-hero__image" role="img" aria-label="Retail store shelves with packaged goods"></div>
+            <div class="retail-hero__panel">
+                <div class="retail-hero__content">
+                    <h1>Retail<br>Solutions</h1>
+                </div>
+            </div>
+            <img class="retail-hero__box retail-hero__box--top-a" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="retail-hero__box retail-hero__box--top-b" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="retail-hero__box retail-hero__box--top-c" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="retail-hero__box retail-hero__box--top-d" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="retail-hero__box retail-hero__box--bottom-a" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="retail-hero__box retail-hero__box--bottom-b" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="retail-hero__box retail-hero__box--bottom-c" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="retail-hero__box retail-hero__box--bottom-d" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="retail-hero__box retail-hero__box--image-top-a" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="retail-hero__box retail-hero__box--image-top-b" src="uploads/box-1.png" alt="" aria-hidden="true">
+        </section>
+
+        <section class="solutions-grid" aria-label="Retail solutions cards">
+            <article class="solution-card" id="gondala">
+                <img src="uploads/Retail-Solutions-c/Gondala.jpg" alt="Gondola" loading="lazy">
+                <div class="card-body">
+                    <h3>Gondola</h3>
+                    <a class="solution-btn" href="gondala.html" aria-label="View more about Gondola">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="checkout-counter">
+                <img src="uploads/Retail-Solutions-c/Checkout Counter.jpg" alt="Checkout Counter" loading="lazy">
+                <div class="card-body">
+                    <h3>Checkout Counter</h3>
+                    <a class="solution-btn" href="checkout-counter.html" aria-label="View more about Checkout Counter">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="rack">
+                <img src="uploads/Retail-Solutions-c/Racks.jpg" alt="Rack" loading="lazy">
+                <div class="card-body">
+                    <h3>Rack</h3>
+                    <a class="solution-btn" href="rack.html" aria-label="View more about Rack">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="stall-bin">
+                <img src="uploads/Retail-Solutions-c/Stall Bin.jpg" alt="Stall Bin" loading="lazy">
+                <div class="card-body">
+                    <h3>Stall Bin</h3>
+                    <a class="solution-btn" href="stall-bin.html" aria-label="View more about Stall Bin">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="cages">
+                <img src="uploads/Retail-Solutions-c/Rolling Cages.jpg" alt="Cages" loading="lazy">
+                <div class="card-body">
+                    <h3>Cages</h3>
+                    <a class="solution-btn" href="cages.html" aria-label="View more about Cages">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="football-fixtures">
+                <img src="uploads/Retail-Solutions-c/Football Fixtures.jpg" alt="Football Fixtures" loading="lazy">
+                <div class="card-body">
+                    <h3>Football Fixtures</h3>
+                    <a class="solution-btn" href="football-fixtures.html" aria-label="View more about Football Fixtures">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="nesting-table">
+                <img src="uploads/Retail-Solutions-c/Nesting Table.jpg" alt="Nesting Table" loading="lazy">
+                <div class="card-body">
+                    <h3>Nesting Table</h3>
+                    <a class="solution-btn" href="nesting-table.html" aria-label="View more about Nesting Table">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="vegetable-fruit-racks">
+                <img src="uploads/Retail-Solutions-c/Vegetable & Fruits Racks.jpg" alt="Vegetable & Fruit Racks" loading="lazy">
+                <div class="card-body">
+                    <h3>Vegetable & Fruit Racks</h3>
+                    <a class="solution-btn" href="vegetable-fruit-racks.html" aria-label="View more about Vegetable and Fruit Racks">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="display-fixtures">
+                <img src="uploads/Retail-Solutions-c/Display Fixtures.jpg" alt="Display Fixtures" loading="lazy">
+                <div class="card-body">
+                    <h3>Display Fixtures</h3>
+                    <a class="solution-btn" href="display-fixtures.html" aria-label="View more about Display Fixtures">&rarr;</a>
+                </div>
+            </article>
+        </section>
+
+    </main>
+    <div id="footer-root"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Handling Trolleys</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link href="navbar.css" rel="stylesheet">
+    <link href="solutions.css" rel="stylesheet">
+    <link href="footer.css" rel="stylesheet">
+    <style>
+        .material-handling-hero {
+            --material-handling-box-width: 60px;
+            --material-handling-box-height: 55px;
+            --material-handling-panel-width: min(64.5%, 700px);
+            --material-handling-left-cluster-left: 0px;
+            position: relative;
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+            height: clamp(320px, 35vw, 405px);
+            min-height: 320px;
+            padding: 0;
+            background: #ffffff;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .material-handling-hero__image {
+            position: absolute;
+            inset: 0;
+            background-image: url('uploads/material-handling.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .material-handling-hero__panel {
+            position: relative;
+            z-index: 1;
+            width: var(--material-handling-panel-width);
+            min-width: 535px;
+            background: #f3f3f3;
+            clip-path: polygon(0 0, 79% 0, 100% 100%, 0 100%);
+            display: flex;
+            align-items: center;
+            padding: 28px 116px 28px 112px;
+        }
+
+        .material-handling-hero__content {
+            position: relative;
+            z-index: 2;
+            transform: translate(48px, 24px);
+        }
+
+        .material-handling-hero__content h1 {
+            margin: 0;
+            color: #0c1118;
+            font-size: 55px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 720;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+        }
+
+        .material-handling-hero__box {
+            position: absolute;
+            z-index: 2;
+            width: var(--material-handling-box-width);
+            height: var(--material-handling-box-height);
+            display: block;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .material-handling-hero__box--top-a {
+            top: 0;
+            left: var(--material-handling-left-cluster-left);
+        }
+
+        .material-handling-hero__box--top-b {
+            top: 0;
+            left: calc(var(--material-handling-left-cluster-left) + var(--material-handling-box-width));
+        }
+
+        .material-handling-hero__box--top-c {
+            top: var(--material-handling-box-height);
+            left: var(--material-handling-left-cluster-left);
+        }
+
+        .material-handling-hero__box--top-d {
+            top: calc(var(--material-handling-box-height) * 2);
+            left: calc(var(--material-handling-left-cluster-left) + var(--material-handling-box-width));
+        }
+
+        .material-handling-hero__box--bottom-a {
+            bottom: 0;
+            left: calc(var(--material-handling-panel-width) - 196px);
+        }
+
+        .material-handling-hero__box--bottom-b {
+            bottom: var(--material-handling-box-height);
+            left: calc(var(--material-handling-panel-width) - 132px);
+        }
+
+        .material-handling-hero__box--bottom-c {
+            bottom: 0;
+            left: calc(var(--material-handling-panel-width) - 68px);
+        }
+
+        .material-handling-hero__box--bottom-d {
+            bottom: 0;
+            left: calc(var(--material-handling-panel-width) - 68px + var(--material-handling-box-width));
+        }
+
+        .material-handling-hero__box--image-top-a {
+            top: 0;
+            right: 132px;
+        }
+
+        .material-handling-hero__box--image-top-b {
+            top: var(--material-handling-box-height);
+            right: 68px;
+        }
+
+        @media (max-width: 768px) {
+            .material-handling-hero {
+                --material-handling-panel-width: 87%;
+                min-height: 345px;
+                height: auto;
+            }
+
+            .material-handling-hero__panel {
+                min-width: 0;
+                padding: 68px 58px 34px 64px;
+                clip-path: polygon(0 0, 84% 0, 100% 100%, 0 100%);
+            }
+
+            .material-handling-hero__content h1 {
+                font-size: clamp(1.8rem, 8vw, 2.5rem);
+            }
+
+            .material-handling-hero__box--bottom-a {
+                left: calc(var(--material-handling-panel-width) - 184px);
+            }
+
+            .material-handling-hero__box--bottom-b {
+                left: calc(var(--material-handling-panel-width) - 120px);
+            }
+
+            .material-handling-hero__box--bottom-c {
+                left: calc(var(--material-handling-panel-width) - 56px);
+            }
+
+            .material-handling-hero__box--bottom-d {
+                left: calc(var(--material-handling-panel-width) - 104px + var(--material-handling-box-width));
+            }
+
+            .material-handling-hero__box--image-top-a {
+                right: 104px;
+            }
+
+            .material-handling-hero__box--image-top-b {
+                right: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .material-handling-hero {
+                --material-handling-panel-width: 89%;
+                min-height: 305px;
+            }
+
+            .material-handling-hero__panel {
+                padding: 60px 44px 26px 40px;
+            }
+
+            .material-handling-hero__box--top-b {
+                left: calc(var(--material-handling-left-cluster-left) + var(--material-handling-box-width));
+            }
+
+            .material-handling-hero__box--top-c {
+                top: var(--material-handling-box-height);
+            }
+
+            .material-handling-hero__box--top-d {
+                top: calc(var(--material-handling-box-height) * 2);
+            }
+
+            .material-handling-hero__box--bottom-a {
+                left: calc(var(--material-handling-panel-width) - 172px);
+            }
+
+            .material-handling-hero__box--bottom-b {
+                left: calc(var(--material-handling-panel-width) - 108px);
+            }
+
+            .material-handling-hero__box--bottom-c {
+                left: calc(var(--material-handling-panel-width) - 44px);
+            }
+
+            .material-handling-hero__box--bottom-d {
+                left: calc(var(--material-handling-panel-width) - 92px + var(--material-handling-box-width));
+            }
+
+            .material-handling-hero__box--image-top-a {
+                right: 74px;
+            }
+
+            .material-handling-hero__box--image-top-b {
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-root"></div>
+
+    <main class="solutions-page">
+        <section class="solutions-hero material-handling-hero" aria-label="Material handling trolleys banner">
+            <div class="material-handling-hero__image" role="img" aria-label="Material handling trolleys and equipment"></div>
+            <div class="material-handling-hero__panel">
+                <div class="material-handling-hero__content">
+                    <h1>Material Handling<br>Trolleys</h1>
+                </div>
+            </div>
+            <img class="material-handling-hero__box material-handling-hero__box--top-a" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="material-handling-hero__box material-handling-hero__box--top-b" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="material-handling-hero__box material-handling-hero__box--top-c" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="material-handling-hero__box material-handling-hero__box--top-d" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="material-handling-hero__box material-handling-hero__box--bottom-a" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="material-handling-hero__box material-handling-hero__box--bottom-b" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="material-handling-hero__box material-handling-hero__box--bottom-c" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="material-handling-hero__box material-handling-hero__box--bottom-d" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="material-handling-hero__box material-handling-hero__box--image-top-a" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="material-handling-hero__box material-handling-hero__box--image-top-b" src="uploads/box-1.png" alt="" aria-hidden="true">
+        </section>
+
+        <section class="solutions-grid" aria-label="Material handling trolley options">
+            <article class="solution-card" id="european-shopping-trolley">
+                <img src="uploads/Material-Handling-Trolleys-c/Europe.jpg" alt="European Shopping Trolley" loading="lazy">
+                <div class="card-body">
+                    <h3>European Shopping Trolley</h3>
+                    <a class="solution-btn" href="european-shopping-trolley.html" aria-label="View more about European Shopping Trolley">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="asian-shopping-trolley">
+                <img src="uploads/Material-Handling-Trolleys-c/Asian.jpg" alt="Asian Shopping Trolley" loading="lazy">
+                <div class="card-body">
+                    <h3>Asian Shopping Trolley</h3>
+                    <a class="solution-btn" href="asian-shopping-trolley.html" aria-label="View more about Asian Shopping Trolley">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="german-shopping-trolley">
+                <img src="uploads/Material-Handling-Trolleys-c/German.jpg" alt="German Shopping Trolley" loading="lazy">
+                <div class="card-body">
+                    <h3>German Shopping Trolley</h3>
+                    <a class="solution-btn" href="german-shopping-trolley.html" aria-label="View more about German Shopping Trolley">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="american-shopping-trolley">
+                <img src="uploads/Material-Handling-Trolleys-c/American.jpg" alt="American Shopping Trolley" loading="lazy">
+                <div class="card-body">
+                    <h3>American Shopping Trolley</h3>
+                    <a class="solution-btn" href="american-shopping-trolley.html" aria-label="View more about American Shopping Trolley">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="plastic-shopping-trolley">
+                <img src="uploads/Material-Handling-Trolleys-c/Plastic.jpg" alt="Plastic Shopping Trolley" loading="lazy">
+                <div class="card-body">
+                    <h3>Plastic Shopping Trolley</h3>
+                    <a class="solution-btn" href="plastic-shopping-trolley.html" aria-label="View more about Plastic Shopping Trolley">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="hand-basket-trolley">
+                <img src="uploads/Material-Handling-Trolleys-c/Handle Basket.jpg" alt="Hand Basket Trolley" loading="lazy">
+                <div class="card-body">
+                    <h3>Hand Basket Trolley</h3>
+                    <a class="solution-btn" href="hand-basket-trolley.html" aria-label="View more about Hand Basket Trolley">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="warehouse-trolley">
+                <img src="uploads/Material-Handling-Trolleys-c/Warehouse.jpg" alt="Warehouse Trolley" loading="lazy">
+                <div class="card-body">
+                    <h3>Warehouse Trolley</h3>
+                    <a class="solution-btn" href="warehouse-trolley.html" aria-label="View more about Warehouse Trolley">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="other-trolley">
+                <img src="uploads/Material-Handling-Trolleys-c/Other Trolley.jpg" alt="Other Trolley" loading="lazy">
+                <div class="card-body">
+                    <h3>Other Trolley</h3>
+                    <a class="solution-btn" href="other-trolley.html" aria-label="View more about Other Trolley">&rarr;</a>
+                </div>
+            </article>
+        </section>
+
+    </main>
+    <div id="footer-root"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="main.js" defer></script>
+</body>
+</html>

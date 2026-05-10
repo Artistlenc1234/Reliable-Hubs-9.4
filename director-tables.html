@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Director Tables</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+  <link href="navbar.css" rel="stylesheet">
+  <link href="footer.css" rel="stylesheet">
+  <link href="selective-pallet.css" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar-root"></div>
+  <main class="selective-page">
+    <section class="product-detail" data-aos="fade-up">
+      <div class="product-gallery">
+        <div class="thumb-column">
+          <button type="button" class="thumb-btn active-thumb" data-src="uploads/Director Tables/1-scaled.jpg" aria-current="true"><img src="uploads/Director Tables/1-scaled.jpg" alt="Director table front view"></button>
+          <button type="button" class="thumb-btn" data-src="uploads/Director Tables/2-scaled.jpg"><img src="uploads/Director Tables/2-scaled.jpg" alt="Executive desk angle"></button>
+          <button type="button" class="thumb-btn" data-src="uploads/Director Tables/3-scaled.jpg"><img src="uploads/Director Tables/3-scaled.jpg" alt="Storage pedestal combination"></button>
+          <button type="button" class="thumb-btn" data-src="uploads/Director Tables/4-scaled.jpg"><img src="uploads/Director Tables/4-scaled.jpg" alt="Director workspace"></button>
+          <button type="button" class="thumb-btn" data-src="uploads/Director Tables/5-scaled.jpg"><img src="uploads/Director Tables/5-scaled.jpg" alt="Director table side view"></button>
+        </div>
+        <div class="main-photo">
+          <img id="mainProductImage" src="uploads/Director Tables/1-scaled.jpg" alt="Director Tables">
+        </div>
+      </div>
+      <div class="product-summary">
+        <h1>Director Tables</h1>
+        <p>Modern yet elegant, our Director Tables encompass all the desired utilities and fulfill all the requirements of the decision maker in an organization. We provide various options to suit an organization's culture and the Director's personal style.</p>
+        <dl class="specs-grid">
+          <div><dt>Style</dt><dd>Modern and elegant executive design</dd></div>
+          <div><dt>Utilities</dt><dd>Comprehensive functional layout for leadership use</dd></div>
+          <div><dt>Customization</dt><dd>Options aligned with organization and personal preferences</dd></div>
+        </dl>
+        <h4>Features</h4>
+        <ul class="features">
+          <li>Designed to support all key executive workspace requirements</li>
+          <li>Combines premium aesthetics with practical day-to-day utility</li>
+          <li>Available in varied options to match office culture and style</li>
+          <li>Supports decision-making environments with refined workspace design</li>
+          <li>Suitable for formal director cabins and leadership spaces</li>
+        </ul>
+      </div>
+    </section>
+    <section class="info-list">
+      <div class="info-card" data-aos="zoom-in">Modern executive table designs with elegant professional appearance.</div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="100">Tailored options to match organizational identity and office interiors.</div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="200">Built for leadership workspaces where utility and style both matter.</div>
+    </section>
+    <section class="video-info-section" data-aos="fade-up">
+      <div class="video-copy">
+        <span class="section-tag">Product Walkthrough</span>
+        <h2>Director tables built for modern executive function and personalized office style</h2>
+        <div class="video-copy-text">
+        <p>Our director tables are crafted to combine modern elegance with the complete set of utilities expected in executive environments, supporting productive and organized decision-making workspaces.</p>
+        <p>With multiple design options to suit organizational culture and individual style preferences, these tables provide a refined balance of presence, comfort, and functional efficiency.</p>
+      </div>
+      </div>
+      <!-- <div class="video-frame">
+        <video controls preload="metadata" poster="uploads/video-banner.png">
+          <source src="uploads/selective-pallet-racking-demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div> -->
+    </section>
+    <section class="quote-board" data-aos="fade-up">
+      <form class="quote-form">
+        <h2>Enquiry Now</h2>
+        <div class="form-grid">
+          <label for="quote-name"><span>Name <span class="required">*</span></span><input id="quote-name" name="name" type="text" required></label>
+          <label for="quote-company"><span>Company Name <span class="required">*</span></span><input id="quote-company" name="company" type="text" required></label>
+          <label for="quote-email"><span>Email <span class="required">*</span></span><input id="quote-email" name="email" type="email" required></label>
+          <label for="quote-mobile"><span>Mobile No <span class="required">*</span></span><input id="quote-mobile" name="mobile" type="number" required></label>
+          <label for="quote-city"><span>City <span class="required">*</span></span><input id="quote-city" name="city" type="text" required></label>
+          <label for="quote-product"><span>Product <span class="required">*</span></span><select id="quote-product" name="product" required><option value="" disabled>Select Product</option><option value="two-three-seater-benches">2/3 Seater Benches</option><option value="locker-cabinets">Locker Cabinets</option><option value="computer-tables">Computer Tables</option><option value="director-tables" selected>Director Tables</option><option value="meeting-tables">Meeting Tables</option><option value="study-table-chairs">Study Table Chairs</option><option value="teacher-tables">Teacher Tables</option><option value="pedestals">Pedestals</option><option value="filling-cabinets">Filling Cabinets</option></select></label>
+          <label for="quote-source" class="full"><span>Source <span class="required">*</span></span><select id="quote-source" name="source" required><option value="" disabled selected>Select Source</option><option value="google">Google Search</option><option value="social-media">Social Media</option><option value="referral">Referral</option></select></label>
+          <label for="quote-brief" class="full"><span>Message</span><textarea id="quote-brief" name="brief" rows="6"></textarea></label>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </section>
+  </main>
+  <div id="footer-root"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImage = document.getElementById('mainProductImage');
+      const thumbButtons = document.querySelectorAll('.thumb-column .thumb-btn');
+      thumbButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const src = btn.dataset.src;
+          if (src && mainImage) {
+            mainImage.src = src;
+            thumbButtons.forEach(t => {
+              t.classList.remove('active-thumb');
+              t.removeAttribute('aria-current');
+            });
+            btn.classList.add('active-thumb');
+            btn.setAttribute('aria-current', 'true');
+          }
+        });
+      });
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

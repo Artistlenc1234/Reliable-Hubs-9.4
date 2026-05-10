@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Solutions</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link href="navbar.css" rel="stylesheet">
+    <link href="solutions.css" rel="stylesheet">
+    <link href="footer.css" rel="stylesheet">
+    <style>
+        .furniture-hero {
+            --furniture-box-width: 60px;
+            --furniture-box-height: 55px;
+            --furniture-panel-width: min(64.5%, 700px);
+            --furniture-left-cluster-left: 0px;
+            position: relative;
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+            height: clamp(320px, 35vw, 405px);
+            min-height: 320px;
+            padding: 0;
+            background: #ffffff;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .furniture-hero__image {
+            position: absolute;
+            inset: 0;
+            background-image: url('uploads/furniture-banner.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .furniture-hero__panel {
+            position: relative;
+            z-index: 1;
+            width: var(--furniture-panel-width);
+            min-width: 535px;
+            background: #f3f3f3;
+            clip-path: polygon(0 0, 79% 0, 100% 100%, 0 100%);
+            display: flex;
+            align-items: center;
+            padding: 28px 116px 28px 112px;
+        }
+
+        .furniture-hero__content {
+            position: relative;
+            z-index: 2;
+            transform: translate(48px, 24px);
+        }
+
+        .furniture-hero__content h1 {
+            margin: 0;
+            color: #0c1118;
+            font-size: 55px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 720;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+        }
+
+        .furniture-hero__box {
+            position: absolute;
+            z-index: 2;
+            width: var(--furniture-box-width);
+            height: var(--furniture-box-height);
+            display: block;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .furniture-hero__box--top-a {
+            top: 0;
+            left: var(--furniture-left-cluster-left);
+        }
+
+        .furniture-hero__box--top-b {
+            top: 0;
+            left: calc(var(--furniture-left-cluster-left) + var(--furniture-box-width));
+        }
+
+        .furniture-hero__box--top-c {
+            top: var(--furniture-box-height);
+            left: var(--furniture-left-cluster-left);
+        }
+
+        .furniture-hero__box--top-d {
+            top: calc(var(--furniture-box-height) * 2);
+            left: calc(var(--furniture-left-cluster-left) + var(--furniture-box-width));
+        }
+
+        .furniture-hero__box--bottom-a {
+            bottom: 0;
+            left: calc(var(--furniture-panel-width) - 196px);
+        }
+
+        .furniture-hero__box--bottom-b {
+            bottom: var(--furniture-box-height);
+            left: calc(var(--furniture-panel-width) - 132px);
+        }
+
+        .furniture-hero__box--bottom-c {
+            bottom: 0;
+            left: calc(var(--furniture-panel-width) - 68px);
+        }
+
+        .furniture-hero__box--bottom-d {
+            bottom: 0;
+            left: calc(var(--furniture-panel-width) - 68px + var(--furniture-box-width));
+        }
+
+        .furniture-hero__box--image-top-a {
+            top: 0;
+            right: 132px;
+        }
+
+        .furniture-hero__box--image-top-b {
+            top: var(--furniture-box-height);
+            right: 68px;
+        }
+
+        @media (max-width: 768px) {
+            .furniture-hero {
+                --furniture-panel-width: 87%;
+                min-height: 345px;
+                height: auto;
+            }
+
+            .furniture-hero__panel {
+                min-width: 0;
+                padding: 68px 58px 34px 64px;
+                clip-path: polygon(0 0, 84% 0, 100% 100%, 0 100%);
+            }
+
+            .furniture-hero__content h1 {
+                font-size: clamp(1.8rem, 8vw, 2.5rem);
+            }
+
+            .furniture-hero__box--bottom-a {
+                left: calc(var(--furniture-panel-width) - 184px);
+            }
+
+            .furniture-hero__box--bottom-b {
+                left: calc(var(--furniture-panel-width) - 120px);
+            }
+
+            .furniture-hero__box--bottom-c {
+                left: calc(var(--furniture-panel-width) - 56px);
+            }
+
+            .furniture-hero__box--bottom-d {
+                left: calc(var(--furniture-panel-width) - 104px + var(--furniture-box-width));
+            }
+
+            .furniture-hero__box--image-top-a {
+                right: 104px;
+            }
+
+            .furniture-hero__box--image-top-b {
+                right: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .furniture-hero {
+                --furniture-panel-width: 89%;
+                min-height: 305px;
+            }
+
+            .furniture-hero__panel {
+                padding: 60px 44px 26px 40px;
+            }
+
+            .furniture-hero__box--top-b {
+                left: calc(var(--furniture-left-cluster-left) + var(--furniture-box-width));
+            }
+
+            .furniture-hero__box--top-c {
+                top: var(--furniture-box-height);
+            }
+
+            .furniture-hero__box--top-d {
+                top: calc(var(--furniture-box-height) * 2);
+            }
+
+            .furniture-hero__box--bottom-a {
+                left: calc(var(--furniture-panel-width) - 172px);
+            }
+
+            .furniture-hero__box--bottom-b {
+                left: calc(var(--furniture-panel-width) - 108px);
+            }
+
+            .furniture-hero__box--bottom-c {
+                left: calc(var(--furniture-panel-width) - 44px);
+            }
+
+            .furniture-hero__box--bottom-d {
+                left: calc(var(--furniture-panel-width) - 92px + var(--furniture-box-width));
+            }
+
+            .furniture-hero__box--image-top-a {
+                right: 74px;
+            }
+
+            .furniture-hero__box--image-top-b {
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-root"></div>
+
+    <main class="solutions-page">
+        <section class="solutions-hero furniture-hero" aria-label="Furniture solutions banner">
+            <div class="furniture-hero__image" role="img" aria-label="Furniture solutions and workspace furnishings"></div>
+            <div class="furniture-hero__panel">
+                <div class="furniture-hero__content">
+                    <h1>Furniture<br>Solutions</h1>
+                </div>
+            </div>
+            <img class="furniture-hero__box furniture-hero__box--top-a" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="furniture-hero__box furniture-hero__box--top-b" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="furniture-hero__box furniture-hero__box--top-c" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="furniture-hero__box furniture-hero__box--top-d" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="furniture-hero__box furniture-hero__box--bottom-a" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="furniture-hero__box furniture-hero__box--bottom-b" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="furniture-hero__box furniture-hero__box--bottom-c" src="uploads/box-1.png" alt="" aria-hidden="true">
+            <img class="furniture-hero__box furniture-hero__box--bottom-d" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="furniture-hero__box furniture-hero__box--image-top-a" src="uploads/box-3.png" alt="" aria-hidden="true">
+            <img class="furniture-hero__box furniture-hero__box--image-top-b" src="uploads/box-1.png" alt="" aria-hidden="true">
+        </section>
+
+        <section class="solutions-grid" aria-label="Furniture solutions cards">
+            <article class="solution-card" id="two-three-seater-benches">
+                <img src="uploads/Furniture-Solutions-c/2-3 Seater Benches.jpg" alt="2/3 Seater Benches" loading="lazy">
+                <div class="card-body">
+                    <h3>2/3 Seater Benches</h3>
+                    <a class="solution-btn" href="two-three-seater-benches.html" aria-label="View more about Two and Three Seater Benches">&rarr;</a>
+                </div>
+            </article>
+            <!-- <article class="solution-card" id="locker-cabinets">
+                <img src="uploads/Layer_1-2.png" alt="Locker Cabinets" loading="lazy">
+                <div class="card-body">
+                    <h3>Locker Cabinets</h3>
+                    <a class="solution-btn" href="locker-cabinets.html" aria-label="View more about Locker Cabinets">&rarr;</a>
+                </div>
+            </article> -->
+            <article class="solution-card" id="computer-tables">
+                <img src="uploads/Furniture-Solutions-c/Computer Tables.jpg" alt="Computer Tables" loading="lazy">
+                <div class="card-body">
+                    <h3>Computer Tables</h3>
+                    <a class="solution-btn" href="computer-tables.html" aria-label="View more about Computer Tables">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="director-tables">
+                <img src="uploads/Furniture-Solutions-c/Director Tables.jpg" alt="Director Tables" loading="lazy">
+                <div class="card-body">
+                    <h3>Director Tables</h3>
+                    <a class="solution-btn" href="director-tables.html" aria-label="View more about Director Tables">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="meeting-tables">
+                <img src="uploads/Furniture-Solutions-c/Meeting Tables.jpg" alt="Meeting Tables" loading="lazy">
+                <div class="card-body">
+                    <h3>Meeting Tables</h3>
+                    <a class="solution-btn" href="meeting-tables.html" aria-label="View more about Meeting Tables">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="study-table-chairs">
+                <img src="uploads/Furniture-Solutions-c/Study Table Chairs.jpg" alt="Study Table Chairs" loading="lazy">
+                <div class="card-body">
+                    <h3>Study Table Chairs</h3>
+                    <a class="solution-btn" href="study-table-chairs.html" aria-label="View more about Study Table Chairs">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="teacher-tables">
+                <img src="uploads/Furniture-Solutions-c/Teacher Tables.jpg" alt="Teacher Tables" loading="lazy">
+                <div class="card-body">
+                    <h3>Teacher Tables</h3>
+                    <a class="solution-btn" href="teacher-tables.html" aria-label="View more about Teacher Tables">&rarr;</a>
+                </div>
+            </article>
+            <article class="solution-card" id="pedestals">
+                <img src="uploads/Furniture-Solutions-c/Pedestals.jpg" alt="Pedestals" loading="lazy">
+                <div class="card-body">
+                    <h3>Pedestals</h3>
+                    <a class="solution-btn" href="pedestals.html" aria-label="View more about Pedestals">&rarr;</a>
+                </div>
+            </article>
+            <!-- <article class="solution-card" id="filling-cabinets">
+                <img src="uploads/Layer_1-9.png" alt="Filling Cabinets" loading="lazy">
+                <div class="card-body">
+                    <h3>Filling Cabinets</h3>
+                    <a class="solution-btn" href="filling-cabinets.html" aria-label="View more about Filling Cabinets">&rarr;</a>
+                </div>
+            </article> -->
+        </section>
+
+    </main>
+    <div id="footer-root"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Counter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+  <link href="navbar.css" rel="stylesheet">
+  <link href="footer.css" rel="stylesheet">
+  <link href="selective-pallet.css" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <main class="selective-page">
+    <section class="product-detail" data-aos="fade-up">
+      <div class="product-gallery">
+        <div class="thumb-column">
+          <button type="button" class="thumb-btn active-thumb" data-src="uploads/checkout-counter/checkout.png" aria-current="true"><img src="uploads/checkout-counter/checkout.png" alt="Checkout counter front view"></button>
+          <!-- <button type="button" class="thumb-btn" data-src="uploads/checkout-counter/checkout.png"><img src="uploads/checkout-couter/checkout.png" alt="Retail billing area"></button>
+          <button type="button" class="thumb-btn" data-src="uploads/Layer_1.png"><img src="uploads/Layer_1.png" alt="Counter security section"></button>
+          <button type="button" class="thumb-btn" data-src="uploads/Layer_1-5.png"><img src="uploads/Layer_1-5.png" alt="Store counter display"></button> -->
+        </div>
+        <div class="main-photo">
+          <img id="mainProductImage" src="uploads/checkout-counter/checkout.png" alt="Checkout counter">
+        </div>
+      </div>
+      <div class="product-summary">
+        <h1>Checkout Counter</h1>
+        <p>Reliable Hub&rsquo;s premium checkout, billing, and cash counters are designed for seamless retail operations with smoother billing flow and a better customer experience.</p>
+        <dl class="specs-grid">
+          <div><dt>Applications</dt><dd>Supermarkets, retail chains, pharmacies, and specialty stores</dd></div>
+          <div><dt>Integration</dt><dd>Supports POS systems, cash drawers, scanners, and printers</dd></div>
+          <div><dt>Design</dt><dd>Ergonomic layouts with durable, easy-maintenance finishes</dd></div>
+        </dl>
+        <h4>Features</h4>
+        <ul class="features">
+          <li>Durable build crafted with high-grade materials for high-traffic retail environments</li>
+          <li>Ergonomic design that supports staff comfort and faster checkout operations</li>
+          <li>Integrated technology options for barcode scanners, POS systems, cash drawers, and receipt printers</li>
+          <li>Customer-friendly layouts for easy access and smooth movement during billing</li>
+          <li>Easy-maintenance surfaces with superior finishes for hassle-free upkeep</li>
+          <li>Built-in cable management for neat and safe electronic wiring</li>
+          <li>Fast installation with minimal disruption to business operations</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="info-list">
+      <div class="info-card" data-aos="zoom-in">Designed to streamline billing processes and improve point-of-sale efficiency.</div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="100">Supports efficient space management, cash handling, and billing system setup.</div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="200">Customizable to suit supermarkets, pharmacies, retail chains, and specialty stores.</div>
+    </section>
+
+    <section class="video-info-section" data-aos="fade-up">
+      <div class="video-copy">
+        <span class="section-tag">Product Walkthrough</span>
+        <h2>Checkout counters built for efficient billing and smoother customer flow</h2>
+        <div class="video-copy-text">
+          <p>Our checkout counters and billing and cash counters are designed to enhance customer experience and streamline billing processes. Built with robust materials and ergonomic layouts, they support efficient space management, easy handling of cash and billing systems, and smooth customer movement at the point of sale.</p>
+          <p>Whether for supermarkets, retail chains, pharmacies, or specialty stores, Reliable Hub offers customizable solutions tailored to specific store requirements, along with integrated technology options and dependable long-term performance.</p>
+        </div>
+      </div>
+      <!-- <div class="video-frame">
+        <video controls preload="metadata" poster="uploads/video-banner.png">
+          <source src="uploads/selective-pallet-racking-demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div> -->
+    </section>
+
+    <section class="quote-board" data-aos="fade-up">
+      <form class="quote-form">
+        <h2>Enquiry Now</h2>
+        <div class="form-grid">
+          <label for="quote-name"><span>Name <span class="required">*</span></span><input id="quote-name" name="name" type="text" required></label>
+          <label for="quote-company"><span>Company Name <span class="required">*</span></span><input id="quote-company" name="company" type="text" required></label>
+          <label for="quote-email"><span>Email <span class="required">*</span></span><input id="quote-email" name="email" type="email" required></label>
+          <label for="quote-mobile"><span>Mobile No <span class="required">*</span></span><input id="quote-mobile" name="mobile" type="number" required></label>
+          <label for="quote-city"><span>City <span class="required">*</span></span><input id="quote-city" name="city" type="text" required></label>
+          <label for="quote-product">
+            <span>Product <span class="required">*</span></span>
+            <select id="quote-product" name="product" required>
+              <option value="" disabled>Select Product</option>
+              <option value="gondala">Gondola</option>
+              <option value="checkout-counter" selected>Checkout Counter</option>
+              <option value="rack">Rack</option>
+              <option value="stall-bin">Stall Bin</option>
+              <option value="cages">Cages</option>
+              <option value="football-fixtures">Football Fixtures</option>
+              <option value="nesting-table">Nesting Table</option>
+              <option value="vegetable-fruit-racks">Vegetable & Fruit Racks</option>
+              <option value="display-fixtures">Display Fixtures</option>
+            </select>
+          </label>
+          <label for="quote-source" class="full"><span>Source <span class="required">*</span></span><select id="quote-source" name="source" required><option value="" disabled selected>Select Source</option><option value="google">Google Search</option><option value="social-media">Social Media</option><option value="referral">Referral</option></select></label>
+          <label for="quote-brief" class="full"><span>Message</span><textarea id="quote-brief" name="brief" rows="6"></textarea></label>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImage = document.getElementById('mainProductImage');
+      const thumbButtons = document.querySelectorAll('.thumb-column .thumb-btn');
+      thumbButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const src = btn.dataset.src;
+          if (src && mainImage) {
+            mainImage.src = src;
+            thumbButtons.forEach(t => {
+              t.classList.remove('active-thumb');
+              t.removeAttribute('aria-current');
+            });
+            btn.classList.add('active-thumb');
+            btn.setAttribute('aria-current', 'true');
+          }
+        });
+      });
+    });
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
